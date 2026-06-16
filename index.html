@@ -9,33 +9,79 @@
 </head>
 <body>
     <!-- NAVEGACIÓN -->
-    <nav>
-        <div class="nav-brand">🏛️ Mixquiahuala</div>
-        <ul class="nav-links">
-            <li><a href="#lugares">Lugares</a></li>
-            <li><a href="#experiencias">Experiencias</a></li>
-            <li><a href="#practico">Información</a></li>
-            <li><a href="#testimonios">Reseñas</a></li>
-        </ul>
-    </nav>
+<nav>
+    <div class="nav-brand">Mixquiahuala</div>
+    
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#lugares">Lugares emblematicos</a></li>
+        <li><a href="#Tradiciones">Tradiciones de la comunidad</a></li>
+        <li><a href="Mitos.html">Mitos y Leyendas</a></li>        
+        <li><a href="#testimonios">Personajes emblematicos</a></li>
+    </ul>
+</nav>
 
     <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Mixquiahuala de Juárez</h1>
-            <p class="hero-subtitle">Descubre la magia del patrimonio cultural mexicano</p>
-            <button class="cta-button" onclick="document.getElementById('lugares').scrollIntoView({behavior: 'smooth'})">Empezemos</button>
+<section class="hero-carousel">
+    <div class="carousel-container">
+        <div class="carousel-slide active" onclick="openImageModal('', 'https://maps.app.goo.gl/EjemploRutaCerro')">
+            <img src="./Imagenes/CERRO.jpg" alt="Cerro de Mixquiahuala">
+            <div class="carousel-caption">
+                <h1>Mixquiahuala de Juárez</h1>
+                <p>Descubre la magia del patrimonio cultural mexicano</p>
+            </div>
         </div>
-    </section>
 
-    <!-- LUGARES DESTACADOS -->
-    <section id="lugares" class="container">
+        <div class="carousel-slide" onclick="openImageModal('../Imagenes/CALVARIO.jpg', 'https://maps.app.goo.gl/EjemploRutaCalvario')">
+            <img src="../Imagenes/CALVARIO.jpg" alt="Feria del Calvario">
+            <div class="carousel-caption">
+                <h1>Feria del Calvario 2026</h1>
+                <p>Historia, cultura y tradición que nos enorgullece</p>
+            </div>
+        </div>
+
+        <div class="carousel-slide" onclick="openImageModal('../Imagenes/PIRAMIDE.jpg', 'https://maps.app.goo.gl/EjemploRutaPiramide')">
+            <img src="../Imagenes/PIRAMIDE.jpg" alt="Cultura en Mixquiahuala">
+            <div class="carousel-caption">
+                <h1>Lugares Emblemáticos</h1>
+                <p>Explora los rincones más icónicos de nuestra región</p>
+            </div>
+        </div>
+
+        <button class="carousel-arrow prev" id="prevSlide">&#10094;</button>
+        <button class="carousel-arrow next" id="nextSlide">&#10095;</button>
+
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</section>
+
+<div id="imageModal" class="img-modal">
+    <div class="img-modal-content">
+        <img id="modalTargetImg" src="" alt="Vista ampliada">
+        <div class="img-modal-buttons">
+            <a id="modalMapBtn" href="#" target="_blank" class="btn-modal-action btn-location">📍 Ubicación</a>
+            <button onclick="closeImageModal()" class="btn-modal-action btn-close-img">✖ Cerrar</button>
+        </div>
+    </div>
+</div>
+
+
+    <script src="js/script.js"></script>
+
+<section id="lugares" class="container">
         <h2 class="section-title">Destinos Imprescindibles</h2>
         <p class="section-subtitle">Explora los lugares más emblemáticos que harán tu visita inolvidable</p>
         
         <div class="places-grid">
             <div class="place-card">
-                <div class="place-image">🎨</div>
+                <div class="place-image-container">
+                    <img src="Imagenes/murales.jpg" alt="Murales en Colonia Morelos" class="place-card-img">
+                </div>
                 <div class="place-info">
                     <div class="place-name">Murales en Colonia Morelos</div>
                     <p class="place-desc">Galería a cielo abierto con obras de arte que reflejan la identidad cultural de la comunidad. Un recorrido colorido por la creatividad local.</p>
@@ -44,7 +90,9 @@
             </div>
 
             <div class="place-card">
-                <div class="place-image">⛰️</div>
+                <div class="place-image-container">
+                    <img src="Imagenes/mirador.jpg" alt="Mirador la Cruz" class="place-card-img">
+                </div>
                 <div class="place-info">
                     <div class="place-name">Mirador la Cruz</div>
                     <p class="place-desc">Vistas panorámicas espectaculares desde este punto elevado. Perfecto para fotografía y contemplación del entorno natural.</p>
@@ -53,7 +101,9 @@
             </div>
 
             <div class="place-card">
-                <div class="place-image">🔺</div>
+                <div class="place-image-container">
+                    <img src="Imagenes/piramide.jpg" alt="Pirámide de Taxhuada" class="place-card-img">
+                </div>
                 <div class="place-info">
                     <div class="place-name">Pirámide de Taxhuada</div>
                     <p class="place-desc">Vestigio arqueológico que conecta con nuestras raíces prehispánicas. Monumento histórico de gran importancia cultural.</p>
@@ -63,127 +113,6 @@
         </div>
     </section>
 
-    <!-- EXPERIENCIAS -->
-    <section id="experiencias">
-        <div class="container">
-            <h2 class="section-title">Vive las Experiencias</h2>
-            <p class="section-subtitle">Actividades únicas para todos los gustos y edades</p>
-            
-            <div class="experiences-grid">
-                <div class="experience-box">
-                    <div class="experience-icon">🚶</div>
-                    <div class="experience-title">Tours Guiados</div>
-                    <p class="experience-text">Recorridos personalizados con guías expertos que te revelarán historias fascinantes de cada lugar.</p>
-                </div>
-
-                <div class="experience-box">
-                    <div class="experience-icon">🍽️</div>
-                    <div class="experience-title">Gastronomía Local</div>
-                    <p class="experience-text">Prueba auténticos platillos tradicionales en restaurantes familiares con sabor genuino mexicano.</p>
-                </div>
-
-                <div class="experience-box">
-                    <div class="experience-icon">📷</div>
-                    <div class="experience-title">Fotografía</div>
-                    <p class="experience-text">Captura momentos inolvidables en los escenarios más pintorescos del municipio.</p>
-                </div>
-
-                <div class="experience-box">
-                    <div class="experience-icon">🎭</div>
-                    <div class="experience-title">Eventos Culturales</div>
-                    <p class="experience-text">Festivales, ferias y celebraciones que te sumergirán en la cultura local.</p>
-                </div>
-
-                <div class="experience-box">
-                    <div class="experience-icon">🛍️</div>
-                    <div class="experience-title">Artesanías</div>
-                    <p class="experience-text">Descubre y adquiere obras de artesanos locales con diseños únicos y tradicionales.</p>
-                </div>
-
-                <div class="experience-box">
-                    <div class="experience-icon">🌿</div>
-                    <div class="experience-title">Naturaleza</div>
-                    <p class="experience-text">Senderismo y actividades al aire libre en entornos naturales preservados.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INFORMACIÓN PRÁCTICA -->
-    <section id="practico">
-        <div class="container">
-            <h2 class="section-title">Información Práctica</h2>
-            <p class="section-subtitle">Todo lo que necesitas saber para tu visita</p>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>🚗 Cómo Llegar</h3>
-                    <p>Ubicado en el estado de Hidalgo, a 2 horas de la Ciudad de México. Acceso fácil por carretera. Recomendamos transporte propio o tours organizados.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>🏨 Dónde Hospedarse</h3>
-                    <p>Variedad de opciones desde hoteles boutique hasta posadas tradicionales. Precios accesibles y servicio amable. Reservar con anticipación en temporada alta.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>⏰ Horarios</h3>
-                    <p>Lugares abiertos de martes a domingo, 9:00 AM - 5:00 PM. Visitas guiadas disponibles con previa coordinación. Cerrado en lunes.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>💰 Presupuesto</h3>
-                    <p>Entrada a monumentos: $50-100 pesos. Tours: $150-250 pesos. Gastronomía: comidas desde $80 pesos. Muy accesible para todos.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>👥 Grupos</h3>
-                    <p>Descuentos especiales para grupos escolares y turísticos. Paquetes personalizados disponibles. Contacta a la oficina de turismo.</p>
-                </div>
-
-                <div class="info-card">
-                    <h3>📱 Contacto</h3>
-                    <p>Oficina de Turismo: (759) 792-XXXX | Email: turismo@mixquiahuala.gob.mx | Abiertos de lunes a viernes 9:00-17:00</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIOS -->
-    <section id="testimonios">
-        <div class="container">
-            <h2 class="section-title">Lo que Dicen Nuestros Visitantes</h2>
-            <p class="section-subtitle">Experiencias auténticas de turistas satisfechos</p>
-            
-            <div class="testimonial">
-                <p class="testimonial-text">"Una joya escondida en Hidalgo. Los murales son increíbles y la gente es muy acogedora. Definitivamente volveré con mi familia."</p>
-                <p class="testimonial-author">- María García, Visitante de CDMX</p>
-            </div>
-
-            <div class="testimonial">
-                <p class="testimonial-text">"El tour guiado fue excelente. Aprendí muchísimo sobre la historia del municipio. Recomiendo este destino a todos mis amigos."</p>
-                <p class="testimonial-author">- Carlos López, Querétaro</p>
-            </div>
-
-            <div class="testimonial">
-                <p class="testimonial-text">"Lugares hermosos, comida deliciosa y precios justos. Es un destino perfecto para un fin de semana de relax y cultura."</p>
-                <p class="testimonial-author">- Sofia Rodríguez, Pachuca</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-text">© 2024 Mixquiahuala de Juárez | Destino Turístico</div>
-            <div class="footer-text">Municipio de Hidalgo, México</div>
-            <div class="footer-bottom">Desarrollado para promover el turismo sustentable y la preservación del patrimonio cultural local</div>
-        </div>
-    </footer>
-
-    <!-- MODALES -->
-
-    <!-- MODAL 1: MURALES -->
     <div id="modal1" class="modal">
         <div class="modal-content">
             <div class="modal-image">🎨</div>
@@ -216,14 +145,13 @@
                     <div class="modal-tip-text"><strong>Tip del visitante:</strong> Los mejores murales se encuentran caminando por las calles Morelos, Abasolo y Allende. No olvides llevar agua y bloqueador.</div>
                 </div>
                 <div class="modal-buttons">
-                    <button class="modal-button btn-direction" onclick="alert('Abriendo Google Maps...')">📍 Cómo llegar</button>
+                    <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
                     <button class="modal-button btn-close-modal" onclick="closeModal('modal1')">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 2: LA CRUZ DE MIXQUIAHUALA -->
     <div id="modal2" class="modal">
         <div class="modal-content">
             <div class="modal-image">⛰️</div>
@@ -256,14 +184,13 @@
                     <div class="modal-tip-text"><strong>Tip del visitante:</strong> Si bajas a la cascada, lleva tenis con buen agarre o calzado acuático para evitar resbalones en las piedras húmedas.</div>
                 </div>
                 <div class="modal-buttons">
-                    <button class="modal-button btn-direction" onclick="alert('Abriendo Google Maps...')">📍 Cómo llegar</button>
+                    <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
                     <button class="modal-button btn-close-modal" onclick="closeModal('modal2')">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 3: PIRÁMIDE DE TAXHUADA -->
     <div id="modal3" class="modal">
         <div class="modal-content">
             <div class="modal-image">🔺</div>
@@ -296,13 +223,11 @@
                     <div class="modal-tip-text"><strong>Tip del visitante:</strong> Visítala el 1 y 2 de noviembre durante el Día de Muertos, cuando el panteón y la pirámide se llenan de flores, decoraciones y ofrendas.</div>
                 </div>
                 <div class="modal-buttons">
-                    <button class="modal-button btn-direction" onclick="alert('Abriendo Google Maps...')">📍 Cómo llegar</button>
+                    <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
                     <button class="modal-button btn-close-modal" onclick="closeModal('modal3')">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
