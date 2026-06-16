@@ -110,6 +110,62 @@
                     <button class="btn-ver-mas" onclick="openModal('modal3')">Ver más →</button>
                 </div>
             </div>
+
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="Imagenes/jardin.jpg" alt="Jardín Municipal" class="place-card-img">
+                </div>
+                <div class="place-info">
+                    <div class="place-name">Jardín Municipal</div>
+                    <p class="place-desc">El corazón de la vida social de Mixquiahuala. Un espacio arbolado perfecto para caminar, disfrutar los portales y relajarse en familia.</p>
+                    <button class="btn-ver-mas" onclick="openModal('modal4')">Ver más →</button>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="Imagenes/jardin.jpg" alt="Jardín Municipal" class="place-card-img">
+                </div>
+                <div class="place-info">
+                    <div class="place-name">Casa del narco</div>
+                    <p class="place-desc">Se localiza en los límites del municipio, cerca de la ribera del Río Tula y la localidad de Tunititlan</p>
+                    <button class="btn-ver-mas" onclick="openModal('modal5')">Ver más →</button>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="Imagenes/jardin.jpg" alt="Jardín Municipal" class="place-card-img">
+                </div>
+                <div class="place-info">
+                    <div class="place-name">Baño Grande</div>
+                    <p class="place-desc">Baño Grande, un balneario ecoturístico famoso por sus cascadas y aguas templadas</p>
+                    <button class="btn-ver-mas" onclick="openModal('modal6')">Ver más →</button>
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="Imagenes/jardin.jpg" alt="Jardín Municipal" class="place-card-img">
+                </div>
+                <div class="place-info">
+                    <div class="place-name">Puente de Tunititlan (Puente Demiñho)</div>
+                    <p class="place-desc">este imponente puente de piedra es una de las joyas de la arquitectura civil colonial en la región</p>
+                    <button class="btn-ver-mas" onclick="openModal('modal7')">Ver más →</button>
+                </div>
+            </div>
+
+                        <div class="place-card">
+                <div class="place-image-container">
+                    <img src="Imagenes/jardin.jpg" alt="Jardín Municipal" class="place-card-img">
+                </div>
+                <div class="place-info">
+                    <div class="place-name">Casa Estudio Byron Gálvez - Eva Beloglovsky</div>
+                    <p class="place-desc">la Casa de Byron Gálvez es el refugio donde el icónico pintor y escultor hidalguense</p>
+                    <button class="btn-ver-mas" onclick="openModal('modal8')">Ver más →</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -191,6 +247,45 @@
         </div>
     </div>
 
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <div class="modal-image">⛰️</div>
+            <div class="modal-body">
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+                <div class="modal-header">
+                    <div class="modal-icon">⛰️</div>
+                    <h2 class="modal-title">Jardin Municipal (Plaza Constitución)</h2>
+                </div>
+                <div class="modal-divider"></div>
+                <p class="modal-description">
+                El Jardín Municipal (también conocido como Plaza Constitución) es el centro de la vida social y cultural del pueblo desde el siglo XIX, un espacio arbolado que conecta el Palacio Municipal, los históricos Portales y la Iglesia de San Antonio de Padua, y que hoy en día sirve como el escenario principal para diferentes eventos.
+                </p>
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <h4>📍 Ubicación</h4>
+                        <p>Centro, 3ra Demarcación, 42700 Mixquiahuala de Juárez, Hgo.</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4> Datos Curiosos</h4>
+                        <p>Los portales que rodean el jardín no solo son una reliquia arquitectónica; originalmente fueron diseñados para que los comerciantes locales pudieran protegerse de las lluvias y del fuerte sol sin dejar de vender</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>📸 Recomendación</h4>
+                        <p>El lugar es un espacio público de entrada libre y ambiente 100% familiar. Al ser el corazón del pueblo, ayuda a mantenerlo limpio utilizando los botes de basura distribuidos en los pasillos y respeta las áreas verdes.</p>
+                    </div>
+                </div>
+                <div class="modal-tip">
+                    <div class="modal-tip-icon">💡</div>
+                    <div class="modal-tip-text"><strong>Tip del visitante:</strong> Visítalo un sábado o domingo por la tarde. Es el mejor momento para disfrutar del ambiente local, comprar postres o botanas y ver el jardín lleno de vida.</div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
+                    <button class="modal-button btn-close-modal" onclick="closeModal('modal4')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="modal3" class="modal">
         <div class="modal-content">
             <div class="modal-image">🔺</div>
@@ -225,6 +320,184 @@
                 <div class="modal-buttons">
                     <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
                     <button class="modal-button btn-close-modal" onclick="closeModal('modal3')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <div class="modal-image">🔺</div>
+            <div class="modal-body">
+                <span class="close" onclick="closeModal('modal5')">&times;</span>
+                <div class="modal-header">
+                    <div class="modal-icon">🔺</div>
+                    <h2 class="modal-title">Casa del narco</h2>
+                </div>
+                <div class="modal-divider"></div>
+                <p class="modal-description">
+                    Se localiza en los límites del municipio, cerca de la ribera del Río Tula y la localidad de Tunititlan, la "Casa del Narco" es una gran y misteriosa mansión abandonada que se ha convertido en un punto de gran interés para los amantes del turismo de exploración en Mixquiahuala, famosa por su imponente arquitectura incrustada en una barranca, sus albercas olvidadas y una misteriosa red de túneles y grutas subterráneas.
+                </p>
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <h4>📍 Ubicación</h4>
+                        <p>7ma Demarcación, 42700 Mixquiahuala de Juárez, Hgo.</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>🏛️ Datos Curiosos</h4>
+                        <p>Su origen es el secreto mejor guardado de la zona: muchos aseguran que perteneció a un capo del narcotráfico, pero otros dicen que fue la lujosa casa de descanso de un importante empresario o banquero.</p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>📸 Recomendación</h4>
+                        <p>El sitio está abandonado y en obra gris, por lo que el acceso corre bajo tu propio riesgo. Se recomienda ir de día, ya sea en grupo o acompañados por un guía local</p>
+                    </div>
+                </div>
+                <div class="modal-tip">
+                    <div class="modal-tip-icon">💡</div>
+                    <div class="modal-tip-text"><strong>Tip del visitante:</strong> Es necesario llevar calzado antiderrapante y una buena lámpara de mano, ya que los caminos de roca son muy oscuros, húmedos y resbaladizos.</div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
+                    <button class="modal-button btn-close-modal" onclick="closeModal('modal5')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <div class="modal-image">🔺</div>
+            <div class="modal-body">
+                <span class="close" onclick="closeModal('modal6')">&times;</span>
+                <div class="modal-header">
+                    <div class="modal-icon">🔺</div>
+                    <h2 class="modal-title">Baño Grande</h2>
+                </div>
+                <div class="modal-divider"></div>
+                <p class="modal-description">
+                En el Barrio los Tigres, a solo unos minutos del centro de Mixquiahuala, se encuentra Baño Grande, un balneario ecoturístico famoso por sus cascadas y aguas templadas. Este oasis familiar es perfecto para quitarse el calor, descansar en sus extensas áreas verdes y disfrutar de la naturaleza.
+                </p>
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <h4>📍 Ubicación</h4>
+                        <p>
+                            Calle bajada a Baño Grande, Calle Vicente Suarez, bajada a Baño Grande, Mixquiahuala, 42700 Mixquiahuala de Juárez, Hgo.
+                        </p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>🏛️ Datos Curiosos</h4>
+                        <p>
+                        El agua en Baño Grande nunca se estanca; proviene de manantiales locales, corre de forma constante a través de sus piletas y albercas, y termina alimentando al Río Tula.                        
+                        </p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>📸 Recomendación</h4>
+                        <p>
+                            El parque abre diario de 7:00 am a 6:00 pm y la entrada ronda los $60 pesos (aplica descuento si llevas INE de Mixquiahuala). Puedes entrar con tu propia comida, pero la regla de oro es recoger toda tu basura al final del día.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-tip">
+                    <div class="modal-tip-icon">💡</div>
+                    <div class="modal-tip-text"><strong>Tip del visitante:</strong> El parque abre diario de 7:00 am a 6:00 pm y la entrada ronda los $60 pesos (aplica descuento si llevas INE de Mixquiahuala). Puedes entrar con tu propia comida, pero la regla de oro es recoger toda tu basura al final del día.</div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
+                    <button class="modal-button btn-close-modal" onclick="closeModal('modal6')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <div class="modal-image">🔺</div>
+            <div class="modal-body">
+                <span class="close" onclick="closeModal('modal7')">&times;</span>
+                <div class="modal-header">
+                    <div class="modal-icon">🔺</div>
+                    <h2 class="modal-title">Puente de Tunititlan (Puente Demiñho)</h2>
+                </div>
+                <div class="modal-divider"></div>
+                <p class="modal-description">
+                Cruzando el Río Tula para conectar a Mixquiahuala con la comunidad de Tunititlan, este imponente puente de piedra es una de las joyas de la arquitectura civil colonial en la región. Su estructura de arcos antiguos rodeada de imponentes árboles de ahuehuete lo convierte en un punto ideal para los amantes de la fotografía histórica, el ciclismo de ruta y las caminatas al atardecer.
+                </p>
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <h4>📍 Ubicación</h4>
+                        <p>
+                        Av. Melchor Ocampo, 7ma Demarcación, 42700 Mixquiahuala, Hgo.
+                        </p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>🏛️ Datos Curiosos</h4>
+                        <p>
+                        Los gigantescos árboles que crecen a los costados del río junto al puente son sabinos (ahuehuetes), algunos de los cuales tienen cientos de años y son de los ejemplares más antiguos de la región. 
+                        </p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>📸 Recomendación</h4>
+                        <p>
+                    Al ser un puente antiguo que aún se utiliza ten extrema precaución al caminar por las orillas. De la misma manera, no dejes basura para proteger las áreas naturales y respeta la estructura histórica. 
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-tip">
+                    <div class="modal-tip-icon">💡</div>
+                    <div class="modal-tip-text"><strong>Tip del visitante:</strong> La mejor hora para visitarlo es justo antes del atardecer, ya que la luz del sol resalta la textura de la piedra vieja y el reflejo de los arcos en el agua, lleva repelente para mosquitos ya que hay bastante
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
+                    <button class="modal-button btn-close-modal" onclick="closeModal('modal7')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <div class="modal-image">🔺</div>
+            <div class="modal-body">
+                <span class="close" onclick="closeModal('modal7')">&times;</span>
+                <div class="modal-header">
+                    <div class="modal-icon">🔺</div>
+                    <h2 class="modal-title">Casa Estudio Byron Gálvez - Eva Beloglovsky</h2>
+                </div>
+                <div class="modal-divider"></div>
+                <p class="modal-description">
+Ubicada en la Calle Lerdo de Tejada (zona de La Cruz), la Casa de Byron Gálvez es el refugio donde el icónico pintor y escultor hidalguense creó gran parte de su obra. Convertido hoy en una casa-museo y archivo vivo, este espacio independiente te permite explorar sus talleres con paredes de cristal, observar de cerca pinturas y esculturas originales, y disfrutar de una vista espectacular al filo de la barranca.
+                </p>
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <h4>📍 Ubicación</h4>
+                        <p>
+                        Lerdo de Tejada 63, La Pena, 5ta Demarcación, 42700 Mixquiahuala de Juárez, Hgo.
+                        </p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>🏛️ Datos Curiosos</h4>
+                        <p>
+                        Al ser un espacio privado, no tiene un horario fijo de visitas. Contacta a los gestores locales para programar una visita guiada antes de ir.
+                        </p>
+                    </div>
+                    <div class="modal-info-item">
+                        <h4>📸 Recomendación</h4>
+                        <p>
+Combina tu visita con la Capilla de La Cruz y el mirador al río. 
+En el estudio, pon atención a los ventanales; están orientados geométricamente para captar la luz natural perfecta a cualquier hora.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-tip">
+                    <div class="modal-tip-icon">💡</div>
+                    <div class="modal-tip-text"><strong>Tip del visitante:</strong> La mejor hora para visitarlo es justo antes del atardecer, ya que la luz del sol resalta la textura de la piedra vieja y el reflejo de los arcos en el agua, lleva repelente para mosquitos ya que hay bastante
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
+                    <button class="modal-button btn-close-modal" onclick="closeModal('modal8')">Cerrar</button>
                 </div>
             </div>
         </div>
