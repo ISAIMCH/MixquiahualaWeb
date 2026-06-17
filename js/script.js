@@ -124,3 +124,60 @@ function closeImageModal() {
         document.body.style.overflow = "auto"; // Devuelve el scroll normal
     }
 }
+
+// ─────────────────────────────────────────────────────────
+// LÓGICA DEL CARRUSEL DENTRO DE LOS MODALES (MULTIPLE)
+// ─────────────────────────────────────────────────────────
+// Objeto para guardar la diapositiva activa de cada modal por separado
+const modalSlideIndices = {};
+
+function initModalCarousels() {
+    // Busca todos los modales y pone su carrusel en la imagen 0 al inicio
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        const modalId = modal.id;
+        modalSlideIndices[modalId] = 0; 
+        showModalSlides(modalId, 0);
+    });
+}
+
+function showModalSlides(modalId, index) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    
+    // Buscar fotos y puntos solo dentro del modal que se clickeó
+    const slides = modal.querySelectorAll('.modal-carousel-slide');
+    const dots = modal.querySelectorAll('.modal-dot');
+    
+    if (slides.length === 0) return; // Si el modal no tiene carrusel, no hace nada
+
+    // Lógica de ciclo infinito para este modal
+    if (index >= slides.length) { modalSlideIndices[modalId] = 0; }
+    if (index < 0) { modalSlideIndices[modalId] = slides.length - 1; }
+    
+    // Ocultar todas y quitar la clase active
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Mostrar solo la imagen correspondiente de este modal
+    slides[modalSlideIndices[modalId]].classList.add('active');
+    if(dots.length > 0) dots[modalSlideIndices[modalId]].classList.add('active');
+}
+
+// Función asignada a las flechas ❮ ❯
+function changeModalSlide(modalId, direction) {
+    if (modalSlideIndices[modalId] === undefined) modalSlideIndices[modalId] = 0;
+    modalSlideIndices[modalId] += direction;
+    showModalSlides(modalId, modalSlideIndices[modalId]);
+}
+
+// Función asignada a los puntos inferiores
+function currentModalSlide(modalId, index) {
+    modalSlideIndices[modalId] = index;
+    showModalSlides(modalId, modalSlideIndices[modalId]);
+}
+
+// Arrancar los carruseles cuando la página cargue
+document.addEventListener("DOMContentLoaded", () => {
+    initModalCarousels();
+});

@@ -1041,3 +1041,75 @@ footer::before {
         font-size: 3em;
     }
 }
+
+/* ─────────────────────────────────────────────────────────
+   CARRUSEL INTERNO DE MODALES
+─────────────────────────────────────────────────────────── */
+.modal-carousel-container {
+    width: 100%;
+    height: 100%;
+    position: absolute; /* Se ajusta al contenedor padre .modal-image */
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-carousel-slide {
+    display: none;
+    width: 90%;
+    height: 85%;
+    object-fit: cover; /* Mantiene la proporción sin deformar */
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    animation: fadeInModal 0.4s ease; /* Usando tu animación global */
+}
+
+.modal-carousel-slide.active {
+    display: block;
+}
+
+.modal-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* Fondo totalmente transparente */
+    color: white;
+    border: none;
+    font-size: 0.5em; /* Hacemos la flecha un poco más grande ya que no tiene círculo */
+    padding: 3px; /* Mantiene un área invisible para que sea fácil darle clic */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* Sombra fuerte para que no se pierda si la foto tiene fondo blanco */
+}
+
+.modal-carousel-arrow:hover {
+    background-color: transparent; /* Sigue transparente al pasar el mouse */
+    transform: translateY(-50%) scale(1.2); /* Solo crece la flecha un poco */
+}
+.modal-arrow-prev { left: 15px; }
+.modal-arrow-next { right: 15px; }
+
+.modal-carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.modal-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-dot.active, .modal-dot:hover {
+    background-color: #ffd700; /* Hace match con el hover de tu nav */
+    transform: scale(1.2);
+}
