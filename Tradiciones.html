@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradiciones y Costumbres - Mixquiahuala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        /* ─────────────────────────────────────────────────────────
+           ESTILOS ESPECÍFICOS PARA LA PÁGINA DE TRADICIONES
+        ─────────────────────────────────────────────────────────── */
+        .intro-section {
+            background: linear-gradient(180deg, #f0f0f0 0%, #f8f8f8 100%);
+            padding: 60px 20px 20px;
+            text-align: center;
+        }
+
+        /* Modales Especiales: Imagen Izquierda, Texto Cultural Derecha Scrolleable */
+        .modal-trad-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 1.1fr 1.9fr; /* Proporción ideal para fotografías de festividades */
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            animation: slideInModal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+
+        .modal-trad-image {
+            width: 100%;
+            height: 100%;
+            min-height: 480px;
+            position: relative;
+        }
+
+        .modal-trad-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-trad-body {
+            padding: 45px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .modal-trad-text-container {
+            overflow-y: auto;
+            max-height: 340px; /* Altura perfecta para la lectura del scroll interno */
+            padding-right: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Barra de scroll personalizada con la identidad visual verde */
+        .modal-trad-text-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .modal-trad-text-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .modal-trad-text-container::-webkit-scrollbar-thumb {
+            background: #1a472a;
+            border-radius: 10px;
+        }
+
+        .trad-text {
+            font-family: 'Lora', serif;
+            color: #444;
+            line-height: 1.9;
+            font-size: 1.05em;
+            white-space: pre-line;
+        }
+
+        .trad-date-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(26, 71, 42, 0.1) 0%, rgba(26, 71, 42, 0.15) 100%);
+            color: #1a472a;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-trad-content {
+                grid-template-columns: 1fr;
+                margin: 20px auto;
+            }
+            .modal-trad-image {
+                min-height: 280px;
+                height: 280px;
+            }
+            .modal-trad-text-container {
+                max-height: none;
+                overflow-y: visible;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <div class="nav-brand">Tradiciones</div>
+        
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">🏡 Home Principal</a></li>
+            <li><a href="index.html#lugares">Lugares emblemáticos</a></li>
+            <li><a href="Mitos.html">Mitos y Leyendas</a></li>
+            <li><a href="Personajes.html">Personajes emblemáticos</a></li>
+        </ul>
+    </nav>
+
+    <!-- SECCIÓN INTRODUCTORIA -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="section-title">Patrimonio Viviente</h2>
+            <p class="section-subtitle">Descubre el folclor, la fe y los rituales ancestrales que llenan de color y alegría el corazón del Valle del Mezquital.</p>
+        </div>
+    </section>
+
+    <!-- CUADRÍCULA DE TRADICIONES -->
+    <section id="tradiciones" class="container" style="padding-top: 0px;">
+        <div class="places-grid">
+            
+            <!-- TRADICIÓN 1: El Carnaval -->
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="./Imagenes/CERRO.jpg" alt="Carnaval de Mixquiahuala" class="place-card-img" style="width:100%; height:260px; object-fit:cover; filter: hue-rotate(45deg);">
+                </div>
+                <div class="place-info">
+                    <span class="trad-date-tag">Febrero / Marzo</span>
+                    <div class="place-name">Carnaval de Mixquiahuala</div>
+                    <p class="place-desc">Una de las fiestas más coloridas e importantes de la región. Destaca por el tradicional ritual del "Pone-Bandera", carros alegóricos y danzas populares.</p>
+                    <button class="btn-ver-mas" onclick="openModal('tradModal1')">Explorar Fiesta →</button>
+                </div>
+            </div>
+
+            <!-- TRADICIÓN 2: Feria del Calvario -->
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="../Imagenes/CALVARIO.jpg" alt="Feria del Calvario" class="place-card-img" style="width:100%; height:260px; object-fit:cover;">
+                </div>
+                <div class="place-info">
+                    <span class="trad-date-tag">Quinto Viernes de Cuaresma</span>
+                    <div class="place-name">Feria del Señor del Calvario</div>
+                    <p class="place-desc">La máxima celebración religiosa del municipio. Un encuentro de profunda devoción que adorna las calles con tapetes de aserrín y arte efímero.</p>
+                    <button class="btn-ver-mas" onclick="openModal('tradModal2')">Explorar Fiesta →</button>
+                </div>
+            </div>
+
+            <!-- TRADICIÓN 3: Día de Muertos en Taxhuada -->
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="ImagenesLugares/PiramideTaxhuada_2.jpg" alt="Día de Muertos" class="place-card-img" style="width:100%; height:260px; object-fit:cover;">
+                </div>
+                <div class="place-info">
+                    <span class="trad-date-tag">1 y 2 de Noviembre</span>
+                    <div class="place-name">Día de Muertos y Ofrendas</div>
+                    <p class="place-desc">Una conmovedora fusión de raíces prehispánicas otomíes y católicas. El panteón comunitario y la pirámide se transforman con flores de cempasúchil.</p>
+                    <button class="btn-ver-mas" onclick="openModal('tradModal3')">Explorar Fiesta →</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+       VENTANAS EMERGENTES (MODALES DE TRADICIONES)
+    ─────────────────────────────────────────────────────────── -->
+
+    <!-- MODAL 1: CARNAVAL -->
+    <div id="tradModal1" class="modal">
+        <div class="modal-trad-content">
+            <div class="modal-trad-image">
+                <img src="./Imagenes/CERRO.jpg" alt="Carnaval" style="filter: hue-rotate(45deg);">
+            </div>
+            <div class="modal-trad-body">
+                <span class="close" onclick="closeModal('tradModal1')">×</span>
+                <div>
+                    <div class="modal-header">
+                        <div class="modal-icon" style="color:white;">🎭</div>
+                        <h2 class="modal-title">Carnaval y el Pone-Bandera</h2>
+                    </div>
+                    <div class="modal-divider"></div>
+                    <div class="modal-trad-text-container">
+                        <p class="trad-text">
+                            El Carnaval de Mixquiahuala de Juárez es catalogado como uno de los encuentros culturales y de esparcimiento más antiguos, vistosos e identitarios de todo el Valle del Mezquital. Celebrado anualmente en los días previos al Miércoles de Ceniza, esta festividad transforma las calles céntricas en un río interminable de música, comparsas y carros alegóricos con temáticas ingeniosas.
+
+                            Sin embargo, el verdadero corazón místico de esta tradición radica en el ancestral ritual del "Pone-Bandera". 
+                            
+                            Este acto consiste en una mayordomía comunitaria de origen prehispánico y sincrético, donde los encargados religiosos y civiles ascienden portando estandartes e insignias sagradas que bendicen los linderos del ejido para asegurar la fertilidad de las tierras de cultivo y atraer buenas lluvias. El carnaval concluye con magnas coronaciones de reyes, bailes masivos en la plaza y una gastronomía desbordante donde el pulque y la barbacoa son los anfitriones indiscutibles.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-close-modal" onclick="closeModal('tradModal1')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: FERIA DEL CALVARIO -->
+    <div id="tradModal2" class="modal">
+        <div class="modal-trad-content">
+            <div class="modal-trad-image">
+                <img src="../Imagenes/CALVARIO.jpg" alt="Feria del Calvario">
+            </div>
+            <div class="modal-trad-body">
+                <span class="close" onclick="closeModal('tradModal2')">×</span>
+                <div>
+                    <div class="modal-header">
+                        <div class="modal-icon" style="color:white;">🙏</div>
+                        <h2 class="modal-title">Feria del Señor del Calvario</h2>
+                    </div>
+                    <div class="modal-divider"></div>
+                    <div class="modal-trad-text-container">
+                        <p class="trad-text">
+                            La Feria del Calvario es la festividad patronal y devocional más solemne y multitudinaria de Mixquiahuala. Fijada rigurosamente en el calendario litúrgico durante el Quinto Viernes de Cuaresma, atrae año con año a miles de peregrinos de estados vecinos que acuden a rendir mandas y agradecimientos ante la milagrosa imagen del Señor del Calvario.
+
+                            Una de las expresiones estéticas más deslumbrantes de esta celebración es la confección nocturna de monumentales tapetes de aserrín multicolor.
+                            
+                            Los vecinos de los barrios se organizan para tapizar kilómetros de calles con complejos patrones geométricos y florales de arte efímero sobre los que pasará la procesión religiosa. Paralelamente, los portales del Jardín Municipal y el recinto ferial se llenan de fuegos pirotécnicos (castillos), juegos mecánicos, eventos artísticos y la venta de tradicionales artesanías locales y antojitos típicos de la región del Mezquital.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-close-modal" onclick="closeModal('tradModal2')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: DÍA DE MUERTOS -->
+    <div id="tradModal3" class="modal">
+        <div class="modal-trad-content">
+            <div class="modal-trad-image">
+                <img src="ImagenesLugares/PiramideTaxhuada_2.jpg" alt="Día de Muertos en el Panteón">
+            </div>
+            <div class="modal-trad-body">
+                <span class="close" onclick="closeModal('tradModal3')">×</span>
+                <div>
+                    <div class="modal-header">
+                        <div class="modal-icon" style="color:white;">🕯️</div>
+                        <h2 class="modal-title">Día de Muertos en Taxhuada</h2>
+                    </div>
+                    <div class="modal-divider"></div>
+                    <div class="modal-trad-text-container">
+                        <p class="trad-text">
+                            La conmemoración del Día de Muertos en el Barrio de Taxhuada adquiere un misticismo único e invaluable en todo México debido a su entorno arqueológico. El 1 y 2 de noviembre, el panteón comunitario del barrio —lugar donde se asienta la antigua Pirámide prehispánica de Donijá— se convierte en un escenario donde conviven el pasado precolombino tolteca y el catolicismo actual.
+
+                            Las familias acuden desde la tarde para limpiar las tumbas y cubrirlas por completo con pétalos de cempasúchil, velas parpadeantes y los platillos preferidos de sus difuntos.
+                            
+                            La pirámide prehispánica, coronada con una cruz en su cúspide, es rodeada de ofrendas colectivas, incienso de copal y música de viento. Al caer la noche, la atmósfera se vuelve mágica; el aroma a pan de muerto recién horneado y las luces de las ceras guían simbólicamente los espíritus de los antepasados de regreso a casa, consolidando esta fecha como un recordatorio íntimo y respetuoso de que la muerte en nuestra comunidad no es un final, sino un puente de reencuentro temporal.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-close-modal" onclick="closeModal('tradModal3')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE INTERACTIVIDAD GLOBAL -->
+    <script src="js/script.js"></script>
+</body>
+</html>

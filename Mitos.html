@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitos y Leyendas - Mixquiahuala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        /* ─────────────────────────────────────────────────────────
+           ESTILOS ESPECÍFICOS PARA LA PÁGINA DE MITOS
+        ─────────────────────────────────────────────────────────── */
+        .search-section {
+            background: linear-gradient(180deg, #f0f0f0 0%, #f8f8f8 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            font-family: 'Montserrat', sans-serif;
+            border: 2px solid #1a472a;
+            border-radius: 30px;
+            outline: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 5px 25px rgba(26, 71, 42, 0.2);
+            border-color: #ffd700;
+        }
+
+        /* Modales Especiales: Imagen Izquierda, Texto Derecha scrolleable */
+        .modal-myth-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr; /* Imagen Izquierda (más estrecha), Texto Derecha */
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            animation: slideInModal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+
+        .modal-myth-image {
+            width: 100%;
+            height: 100%;
+            min-height: 450px;
+            position: relative;
+        }
+
+        .modal-myth-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-myth-body {
+            padding: 45px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .modal-myth-text-container {
+            overflow-y: auto;
+            max-height: 320px; /* Controla la altura del scroll interno */
+            padding-right: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo personalizado para la barra de scroll */
+        .modal-myth-text-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .modal-myth-text-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .modal-myth-text-container::-webkit-scrollbar-thumb {
+            background: #1a472a;
+            border-radius: 10px;
+        }
+
+        .myth-text {
+            font-family: 'Lora', serif;
+            color: #444;
+            line-height: 1.9;
+            font-size: 1.05em;
+            white-space: pre-line; /* Mantiene saltos de línea estéticos */
+        }
+
+        /* No encontrar resultados */
+        .no-results {
+            display: none;
+            text-align: center;
+            font-size: 1.3em;
+            color: #666;
+            margin: 40px 0;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .modal-myth-content {
+                grid-template-columns: 1fr;
+                margin: 20px auto;
+            }
+            .modal-myth-image {
+                min-height: 250px;
+                height: 250px;
+            }
+            .modal-myth-text-container {
+                max-height: none; /* En móviles fluye de forma natural */
+                overflow-y: visible;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand">Mitos y Leyendas</div>
+        
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">🏡 Home Principal</a></li>
+            <li><a href="index.html#lugares">Lugares emblemáticos</a></li>
+            <li><a href="index.html#Tradiciones">Tradiciones de la comunidad</a></li>
+            <li><a href="index.html#testimonios">Personajes emblemáticos</a></li>
+        </ul>
+    </nav>
+
+    <section class="search-section">
+        <div class="container">
+            <h2 class="section-title">Relatos del Mezquital</h2>
+            <p class="section-subtitle">Explora las historias, misterios y leyendas transmitidas de generación en generación en Mixquiahuala.</p>
+            <div class="search-container">
+                <input type="text" id="mythSearch" class="search-input" placeholder="🔍 Escribe para buscar un mito o leyenda...">
+            </div>
+        </div>
+    </section>
+
+    <section id="mitos" class="container" style="padding-top: 20px;">
+        <div class="no-results" id="noResults">No se encontraron mitos o leyendas que coincidan con tu búsqueda.</div>
+        
+        <div class="places-grid">
+            
+            <div class="place-card myth-card" data-title="la llorona rio tula leyendas">
+                <div class="place-image-container">
+                    <img src="./Imagenes/RioTula.jpg" alt="Río Tula" class="place-card-img" style="width:100%; height:250px; object-fit:cover;">
+                </div>
+                <div class="place-info">
+                    <div class="place-name">La Llorona en el Río Tula</div>
+                    <p class="place-desc">Pobladores cercanos a las riberas del río aseguran escuchar lamentos desgarradores durante las noches de luna llena.</p>
+                    <button class="btn-ver-mas" onclick="openModal('mythModal1')">Leer relato →</button>
+                </div>
+            </div>
+
+            <div class="place-card myth-card" data-title="el charro negro cerro mitos">
+                <div class="place-image-container">
+                    <img src="./Imagenes/CERRO.jpg" alt="Cerro de Mixquiahuala" class="place-card-img" style="width:100%; height:250px; object-fit:cover;">
+                </div>
+                <div class="place-info">
+                    <div class="place-name">El Charro Negro del Cerro</div>
+                    <p class="place-desc">La conocida historia del hombre elegante a caballo que ronda los senderos del cerro buscando viajeros solitarios.</p>
+                    <button class="btn-ver-mas" onclick="openModal('mythModal2')">Leer relato →</button>
+                </div>
+            </div>
+
+            <div class="place-card myth-card" data-title="los tuneles secretos casa narco misterio">
+                <div class="place-image-container">
+                    <img src="ImagenesLugares/CasaNarco_1.jpg" alt="Casa Abandonada" class="place-card-img" style="width:100%; height:250px; object-fit:cover;">
+                </div>
+                <div class="place-info">
+                    <div class="place-name">Los Túneles Ocultos</div>
+                    <p class="place-desc">Mitos urbanos sobre pasadizos subterráneos ocultos en las barrancas que conectan antiguos puntos del municipio.</p>
+                    <button class="btn-ver-mas" onclick="openModal('mythModal3')">Leer relato →</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="mythModal1" class="modal">
+        <div class="modal-myth-content">
+            <div class="modal-myth-image">
+                <img src="./Imagenes/RioTula.jpg" alt="Río Tula">
+            </div>
+            <div class="modal-myth-body">
+                <span class="close" onclick="closeModal('mythModal1')">×</span>
+                <div>
+                    <div class="modal-header">
+                        <div class="modal-icon" style="color:white;">💧</div>
+                        <h2 class="modal-title">La Llorona en el Río Tula</h2>
+                    </div>
+                    <div class="modal-divider"></div>
+                    <div class="modal-myth-text-container">
+                        <p class="myth-text">
+                            Desde tiempos inmemoriales, los sabinos y ahuehuetes milenarios que custodian el cauce del Río Tula han sido testigos de apariciones nocturnas misteriosas. Los lugareños más ancianos relatan que, entre las doce y las tres de la madrugada, una espesa e inusual niebla emerge de las aguas templadas del río.
+
+                            Es en ese instante cuando el viento arrastra un eco helado que eriza la piel de los pescadores y vecinos de la ribera. Un lamento prolongado y desgarrador que parece buscar algo entre las corrientes de agua. 
+                            
+                            Dice la leyenda de nuestra comunidad que se trata de un alma en pena que recorre las orillas desde la época colonial, perdiéndose entre los matorrales y las rocas de las barrancas antes de que los primeros rayos del sol toquen el Valle del Mezquital. Los arrieros evitaban cruzar los puentes viejos a esas horas para no toparse con la silueta pálida y flotante que viste de blanco níveo.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-close-modal" onclick="closeModal('mythModal1')">Cerrar Relato</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mythModal2" class="modal">
+        <div class="modal-myth-content">
+            <div class="modal-myth-image">
+                <img src="./Imagenes/CERRO.jpg" alt="Cerro">
+            </div>
+            <div class="modal-myth-body">
+                <span class="close" onclick="closeModal('mythModal2')">×</span>
+                <div>
+                    <div class="modal-header">
+                        <div class="modal-icon" style="color:white;">🐎</div>
+                        <h2 class="modal-title">El Charro Negro del Cerro</h2>
+                    </div>
+                    <div class="modal-divider"></div>
+                    <div class="modal-myth-text-container">
+                        <p class="myth-text">
+                            El imponente Cerro de Mixquiahuala resguarda secretos que desafían la lógica. Quienes acostumbran ascender por sus veredas áridas al caer la tarde, cuentan la historia de un imponente caballo negro cuyos ojos brillan como brasas encendidas. 
+
+                            Montando a la bestia se encuentra un hombre de postura impecable, vestido con un elegante traje de charro con botonadura de plata que resplandece bajo la luz de la luna.
+                            
+                            A diferencia de los mitos comunes, los campesinos de la región afirman que este ser no busca hacer daño inmediato; se aparece ante los caminantes solitarios ofreciendo bolsas llenas de monedas de oro antiguo a cambio de que le acompañen hacia el fondo de las grutas y profundidades de la barranca. 
+
+                            Quienes conocen la advertencia de sus abuelos saben que aceptar cualquier obsequio del Charro Negro sella un pacto del cual es imposible escapar, por lo que el consejo de los locales es simplemente persignarse, desviar la mirada y continuar el paso firmemente sin mirar atrás, oyendo el tintineo metálico de sus espuelas perderse entre las biznagas.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-close-modal" onclick="closeModal('mythModal2')">Cerrar Relato</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mythModal3" class="modal">
+        <div class="modal-myth-content">
+            <div class="modal-myth-image">
+                <img src="ImagenesLugares/CasaNarco_1.jpg" alt="Casa Abandonada">
+            </div>
+            <div class="modal-myth-body">
+                <span class="close" onclick="closeModal('mythModal3')">×</span>
+                <div>
+                    <div class="modal-header">
+                        <div class="modal-icon" style="color:white;">👁️</div>
+                        <h2 class="modal-title">Los Túneles Ocultos</h2>
+                    </div>
+                    <div class="modal-divider"></div>
+                    <div class="modal-myth-text-container">
+                        <p class="myth-text">
+                            A los bordes del municipio, donde la roca se fractura y la vegetación de la barranca se vuelve más densa, se erige un mito moderno que obsesiona a los exploradores urbanos: la existencia de pasadizos secretos y túneles subterráneos debajo de la famosa e imponente edificación abandonada en obra gris cerca de Tunititlán.
+
+                            Los rumores locales sugieren que estas grutas no son formaciones naturales cotidianas, sino ramificaciones meticulosamente excavadas que cruzan por debajo del lecho del Río Tula.
+                            
+                            La conseja popular afirma que estos túneles sirvieron como rutas de escape y escondite de tesoros ilícitos o reliquias valiosas durante las últimas décadas del siglo pasado. Los pastores de la zona cuentan que por las noches se perciben corrientes de aire frío inusuales provenientes de respiraderos ocultos entre las piedras del monte, acompañados por ruidos mecánicos extraños. El mito permanece vigente debido a lo peligroso y resbaladizo del terreno, manteniendo el misterio intacto lejos del alcance de los curiosos cotidianos.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button btn-close-modal" onclick="closeModal('mythModal3')">Cerrar Relato</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // ─────────────────────────────────────────────────────────
+        // LÓGICA FILTRADORA DE LA BARRA DE BÚSQUEDA
+        // ─────────────────────────────────────────────────────────
+        document.getElementById('mythSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.myth-card');
+            const noResults = document.getElementById('noResults');
+            let hasResults = false;
+
+            cards.forEach(card => {
+                const searchKey = card.getAttribute('data-title');
+                // Si contiene los términos clave de búsqueda, se muestra
+                if (searchKey.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Mostrar el mensaje si no hay ninguna coincidencia
+            if (hasResults) {
+                noResults.style.display = 'none';
+            } else {
+                noResults.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
