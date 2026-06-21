@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes Emblemáticos - Mixquiahuala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        /* ─────────────────────────────────────────────────────────
+           ESTILOS ESPECÍFICOS PARA LA PÁGINA DE PERSONAJES
+        ─────────────────────────────────────────────────────────── */
+        .intro-section {
+            background: linear-gradient(180deg, #f0f0f0 0%, #f8f8f8 100%);
+            padding: 60px 20px 20px;
+            text-align: center;
+        }
+
+        /* Modales Especiales: Imagen Izquierda, Texto Biográfico Derecha Scrolleable */
+        .modal-char-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 1.1fr 1.9fr; /* Proporción ideal para retratos */
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            animation: slideInModal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+
+        .modal-char-image {
+            width: 100%;
+            height: 100%;
+            min-height: 480px;
+            position: relative;
+        }
+
+        .modal-char-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-char-body {
+            padding: 45px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .modal-char-text-container {
+            overflow-y: auto;
+            max-height: 340px; /* Altura perfecta para la lectura del scroll */
+            padding-right: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Barra de scroll personalizada con la identidad visual verde */
+        .modal-char-text-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .modal-char-text-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .modal-char-text-container::-webkit-scrollbar-thumb {
+            background: #1a472a;
+            border-radius: 10px;
+        }
+
+        .char-bio {
+            font-family: 'Lora', serif;
+            color: #444;
+            line-height: 1.9;
+            font-size: 1.05em;
+            white-space: pre-line;
+        }
+
+        .char-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, rgba(196, 30, 58, 0.15) 100%);
+            color: #c41e3a;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-char-content {
+                grid-template-columns: 1fr;
+                margin: 20px auto;
+            }
+            .modal-char-image {
+                min-height: 280px;
+                height: 280px;
+            }
+            .modal-char-text-container {
+                max-height: none;
+                overflow-y: visible;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <div class="nav-brand">Personajes Ilustres</div>
+        
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">🏡 Home Principal</a></li>
+            <li><a href="index.html#lugares">Lugares emblemáticos</a></li>
+            <li><a href="index.html#Tradiciones">Tradiciones de la comunidad</a></li>
+            <li><a href="Mitos.html">Mitos y Leyendas</a></li>
+        </ul>
+    </nav>
+
+    <!-- SECCIÓN INTRODUCTORIA (SIN BUSCADOR) -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="section-title">Orgullo e Identidad</h2>
+            <p class="section-subtitle">Conoce a las mentes, artistas y figuras históricas que han dejado una huella imborrable en la historia de Mixquiahuala.</p>
+        </div>
+    </section>
+
+    <!-- CUADRÍCULA DE PERSONAJES -->
+    <section id="personajes" class="container" style="padding-top: 0px;">
+        <div class="places-grid">
+            
+            <!-- PERSONAJE 1: Byron Gálvez -->
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="ImagenesLugares/CasaByron_2.jpg" alt="Byron Gálvez - Espacio Creativo" class="place-card-img" style="width:100%; height:260px; object-fit:cover;">
+                </div>
+                <div class="place-info">
+                    <span class="char-tag">Artes Plásticas</span>
+                    <div class="place-name">Byron Gálvez Avilés</div>
+                    <p class="place-desc">Pintor y escultor de renombre internacional. Su visión abstracta y geométrica transformó el panorama artístico de Hidalgo y de todo México.</p>
+                    <button class="btn-ver-mas" onclick="openModal('charModal1')">Ver Biografía →</button>
+                </div>
+            </div>
+
+            <!-- PERSONAJE 4: David Noble -->
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="ImagenesLugares/DavidNoble.jpg" alt="General David Noble Pérez" class="place-card-img" style="width:100%; height:260px; object-fit:cover;">
+                </div>
+                <div class="place-info">
+                    <span class="char-tag">Liderazgo Agrario</span>
+                    <div class="place-name">Gral. David Noble Pérez</div>
+                    <p class="place-desc">General de brigada revolucionario y pilar de la lucha campesina. Logró desarticular el dominio latifundista de la Hacienda de Ulapa para fundar el ejido de Mixquiahuala.</p>
+                    <button class="btn-ver-mas" onclick="openModal('charModal4')">Ver Biografía →</button>
+                </div>
+            </div>
+
+            <!-- PERSONAJE 5: Milton Flores -->
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="ImagenesLugares/MiltonFlores.jpg" alt="Don Milton Flores Moreno" class="place-card-img" style="width:100%; height:260px; object-fit:cover;">
+                </div>
+                <div class="place-info">
+                    <span class="char-tag">Crónica e Historia</span>
+                    <div class="place-name">Don Milton Flores Moreno</div>
+                    <p class="place-desc">Historiador local, escritor y cronista deportivo. Autor de "Voces y huellas de Mixquiahuala", dedicó su vida a inmortalizar la memoria oral, las tradiciones y las hazañas del fútbol del pueblo.</p>
+                    <button class="btn-ver-mas" onclick="openModal('charModal5')">Ver Biografía →</button>
+                </div>
+            </div>
+            <!-- PERSONAJE 6: Vicente Aguirre del Castillo -->
+            <div class="place-card">
+                <div class="place-image-container">
+                    <img src="ImagenesLugares/VicenteAguirre.jpg" alt="Vicente Aguirre del Castillo" class="place-card-img" style="width:100%; height:260px; object-fit:cover;">
+                </div>
+                <div class="place-info">
+                    <span class="char-tag">Gobernanza Estatal</span>
+                    <div class="place-name">Vicente Aguirre del Castillo</div>
+                    <p class="place-desc">Gobernador constitucional de Hidalgo (1945-1951), abogado y diplomático nacido en Mixquiahuala. Impulsó la infraestructura rural y fue apodado el «Apóstol del Maguey».</p>
+                    <button class="btn-ver-mas" onclick="openModal('charModal6')">Ver Biografía →</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+       VENTANAS EMERGENTES (MODALES BIOGRÁFICOS)
+    ─────────────────────────────────────────────────────────── -->
+
+    <!-- MODAL BYRON GÁLVEZ -->
+    <div id="charModal1" class="modal">
+    <div class="modal-char-content">
+        <div class="modal-char-image">
+            <img src="ImagenesLugares/CasaByron_2.jpg" alt="Byron Gálvez Avilés">
+        </div>
+        <div class="modal-char-body">
+            <span class="close" onclick="closeModal('charModal1')">×</span>
+            <div>
+                <div class="modal-header">
+                    <div class="modal-icon" style="color:white;">🎨</div>
+                    <h2 class="modal-title">Byron Gálvez Avilés</h2>
+                </div>
+                <div class="modal-divider"></div>
+                <div class="modal-char-text-container">
+                    
+                    <!-- Ficha de Datos Rápidos -->
+                    <p class="char-bio" style="margin-bottom: 20px; background: rgba(26, 71, 42, 0.05); padding: 15px; border-radius: 8px; border-left: 4px solid #1a472a;">
+                        <strong>📌 Ficha Biográfica:</strong><br>
+                        • <strong>Nombre Completo:</strong> Byron Gálvez Avilés<br>
+                        • <strong>Fecha de Nacimiento:</strong> 28 de octubre de 1941<br>
+                        • <strong>Lugar de Origen:</strong> Mixquiahuala, Hidalgo<br>
+                        • <strong>Fallecimiento:</strong> 27 de octubre de 2009 (Ciudad de México)<br>
+                        • <strong>Ocupación:</strong> Pintor, escultor, grabador y dibujante
+                    </p>
+
+                    <!-- Cuerpo de la Biografía -->
+                    <p class="char-bio">
+                        Byron Gálvez Avilés mostró inclinación por las artes plásticas desde su infancia en Mixquiahuala, influenciado por su padre, quien era comerciante y amante de la literatura. A los 16 años se trasladó a la Ciudad de México para ingresar a la Escuela Nacional de Artes Plásticas (Academia de San Carlos) de la UNAM, donde cursó estudios de pintura y escultura entre 1958 y 1962, teniendo como mentores a figuras de la relevancia de Francisco Zúñiga.
+                    </p>
+                    
+                    <p class="char-bio">
+                        A lo largo de su carrera, Gálvez desarrolló un lenguaje visual único que fusionó el expresionismo con el cubismo geométrico. Su técnica se caracterizó por un manejo riguroso del color, texturas densas y la esquematización de la figura humana, especialmente la femenina. Esto lo llevó a realizar más de 55 exposiciones individuales y 150 colectivas en galerías y museos de México, Estados Unidos, Europa y Latinoamérica. El actor estadounidense Vincent Price llegó a llamarlo "el Picasso mexicano" debido a su destreza técnica, adquiriendo gran parte de su producción temprana.
+                    </p>
+
+                    <p class="char-bio">
+                        <strong>📍 Vínculo Regional</strong><br>
+                        A pesar de su proyección internacional, Gálvez mantuvo un lazo operativo e identitario con su tierra natal. Los colores de su paleta (azules intensos, ocres y violetas) estaban inspirados directamente en la luz y el paisaje semiárido del Valle del Mezquital.
+                    </p>
+                    
+                    <p class="char-bio">
+                        Durante las décadas de los 80 y 90, el artista impulsó el desarrollo cultural de la región mediante conferencias y apoyo a talleres locales, argumentando que el talento artístico de Hidalgo debía descentralizarse de la capital del país. Su taller en la Ciudad de México funcionó frecuentemente como un espacio de formación y mentoría para jóvenes creadores hidalguenses que buscaban abrirse paso en el circuito artístico nacional.
+                    </p>
+
+                    <p class="char-bio">
+                        <strong>⛲ Parque David Ben Gurión</strong><br>
+                        La consagración de su legado en el estado de Hidalgo se materializó entre los años 2001 y 2005 con el diseño y construcción del mural peatonal "Homenaje a la Mujer del Mundo", ubicado en el Parque David Ben Gurión en Pachuca.
+                    </p>
+                    
+                    <p class="char-bio">
+                        Esta obra es el mosaico peatonal más grande del mundo, con una extensión de 32,000 metros cuadrados (80 metros de ancho por 400 metros de largo). Para su realización se utilizaron aproximadamente 7 millones de azulejos y baldosas de cerámica en 12 tamaños diferentes y una gama de 45 colores distintos. El diseño consta de 2,080 figuras geométricas que rinden tributo a la figura femenina y representa la obra de arte público contemporáneo más importante del estado.
+                    </p>
+
+                    <p class="char-bio">
+                        <strong>🏛️ Homenaje Local</strong><br>
+                        En Mixquiahuala, la memoria del artista se integró al paisaje urbano e institucional. El municipio lo declaró formalmente hijo pródigo de la demarcación, y en su honor se nombró la Casa de la Cultura "Byron Gálvez", ubicada en la zona centro de la cabecera municipal. Este espacio resguarda la memoria de sus obras, promueve las artes plásticas locales y funge como el eje de la educación artística y talleres culturales para los habitantes del municipio.
+                    </p>
+
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-button btn-close-modal" onclick="closeModal('charModal1')">Cerrar Biografía</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- David Noble -->
+    <div id="charModal4" class="modal">
+    <div class="modal-char-content">
+        <div class="modal-char-image">
+            <img src="ImagenesLugares/DavidNoble.jpg" alt="General David Noble Pérez">
+        </div>
+        <div class="modal-char-body">
+            <span class="close" onclick="closeModal('charModal4')">×</span>
+            <div>
+                <div class="modal-header">
+                    <div class="modal-icon" style="color:white;">🎖️</div>
+                    <h2 class="modal-title">General David Noble Pérez</h2>
+                </div>
+                <div class="modal-divider"></div>
+                <div class="modal-char-text-container">
+                    
+                    <!-- Ficha de Datos Rápidos -->
+                    <p class="char-bio" style="margin-bottom: 20px; background: rgba(26, 71, 42, 0.05); padding: 15px; border-radius: 8px; border-left: 4px solid #1a472a;">
+                        <strong>📌 Ficha Biográfica:</strong><br>
+                        • <strong>Nombre Completo:</strong> David Noble Pérez<br>
+                        • <strong>Fecha de Nacimiento:</strong> 28 de diciembre de 1887<br>
+                        • <strong>Lugar de Origen:</strong> Mixquiahuala, Hidalgo<br>
+                        • <strong>Fallecimiento:</strong> 15 de marzo de 1961<br>
+                        • <strong>Ocupación:</strong> Agricultor y líder comunitario
+                    </p>
+
+                    <!-- Cuerpo de la Biografía -->
+                    <p class="char-bio">
+                        David Noble Pérez se sumó al movimiento armado de la Revolución Mexicana en la década de 1910 dentro del estado de Hidalgo, incorporándose a las filas del Ejército Constitucionalista bajo el Plan de Guadalupe. Debido a su liderazgo natural entre los trabajadores del campo y su conocimiento estratégico de la geografía del Valle del Mezquital, organizó un regimiento de guerrillas rurales integrado por campesinos locales.
+                    </p>
+                    
+                    <p class="char-bio">
+                        Al frente de este contingente, Noble operó en la zona que abarca Mixquiahuala, Actopan, Tlahuelilpan y Progreso. Sus tropas aseguraron el control de los caminos y vías de comunicación rurales, bloqueando el avance y el abastecimiento de las fuerzas federales huertistas. Su desempeño en campaña y su capacidad organizativa le valieron ascensos constantes en el escalafón militar hasta obtener el grado de General de Brigada.
+                    </p>
+
+                    <p class="char-bio">
+                        <strong>🌾 Lucha Agraria y la Hacienda de Ulapa</strong><br>
+                        Al concluir la fase armada más intensa del conflicto, el General David Noble concentró su poder político y militar en resolver la crisis agraria de su municipio natal. En ese periodo, la gran mayoría de las tierras laborables de Mixquiahuala estaban bajo el dominio de la Hacienda de Ulapa, un latifundio que mantenía a la población bajo el sistema de peonaje acasillado y servidumbre.
+                    </p>
+                    
+                    <p class="char-bio">
+                        Noble utilizó su posición oficial para respaldar activamente a los campesinos nativos frente a los terratenientes. Sirvió como el brazo operativo para debilitar el control económico de la hacienda y detener las represalias armadas de los antiguos dueños,iniendo que las familias del pueblo tomaran posesión física de los campos de cultivo que trabajaban.
+                    </p>
+
+                    <p class="char-bio">
+                        <strong>📜 Fundación del Ejido Local</strong><br>
+                        Su acción histórica más importante fue la aplicación directa de la Ley Agraria de 1915 y el Artículo 27 constitucional para fundar el ejido local.
+                    </p>
+
+                    <p class="char-bio">
+                        Noble coordinó los primeros comités particulares administrativos del municipio y encabezó la búsqueda de los títulos primordiales de la época colonial para demostrar legalmente la propiedad histórica de los terrenos comunales. Estas gestiones ante la Comisión Local Agraria resultaron en la firma de la Resolución Presidencial de Dotación de Ejido, la cual desarticuló las propiedades de la Hacienda de Ulapa y entregó miles de hectáreas cultivables de forma colectiva a los habitantes de Mixquiahuala.
+                    </p>
+
+                    <p class="char-bio">
+                        <strong>🏫 Homenaje Local</strong><br>
+                        Tras el proceso de pacificación, como reconocimiento por haber asegurado el patrimonio territorial y económico de la comunidad, se nombró en su honor a la Escuela Secundaria General "David Noble". El plantel se mantiene como una de las instituciones educativas públicas con mayor arraigo y tradición en la región.
+                    </p>
+
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-button btn-close-modal" onclick="closeModal('charModal4')">Cerrar Biografía</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- MODAL MILTON FLORES -->
+<div id="charModal5" class="modal">
+    <div class="modal-char-content">
+        <div class="modal-char-image">
+            <img src="ImagenesLugares/MiltonFlores.jpg" alt="Don Milton Flores Moreno">
+        </div>
+        <div class="modal-char-body">
+            <span class="close" onclick="closeModal('charModal5')">×</span>
+            <div>
+                <div class="modal-header">
+                    <div class="modal-icon" style="color:white;">📖</div>
+                    <h2 class="modal-title">Don Milton Flores Moreno</h2>
+                </div>
+                <div class="modal-divider"></div>
+                <div class="modal-char-text-container">
+                    
+                    <!-- Ficha de Datos Rápidos -->
+                    <p class="char-bio" style="margin-bottom: 20px; background: rgba(26, 71, 42, 0.05); padding: 15px; border-radius: 8px; border-left: 4px solid #1a472a;">
+                        <strong>📌 Ficha Biográfica:</strong><br>
+                        • <strong>Nombre Completo:</strong> Milton Flores Moreno<br>
+                        • <strong>Fecha de Nacimiento:</strong> 19 de septiembre de 1928<br>
+                        • <strong>Lugar de Origen:</strong> Mixquiahuala, Hidalgo<br>
+                        • <strong>Fallecimiento:</strong> 21 de diciembre de 2024<br>
+                        • <strong>Ocupación:</strong> Gestor social, promotor deportivo, escritor e historiador local
+                    </p>
+
+                    <!-- Cuerpo de la Biografía -->
+                    <p class="char-bio">
+                        Don Milton Flores Moreno se ha consolidado como uno de los referentes contemporáneos más importantes en el rescate de la memoria colectiva de Mixquiahuala. A través de una labor de investigación independiente, basada tanto en la revisión de archivos como en la recopilación de testimonios orales, se dedicó a plasmar la transición histórica, las costumbres y las luchas sociales que dieron identidad al municipio y al Valle del Mezquital.
+                    </p>
+
+                    <p class="char-bio">
+                        <strong>✍️ Obra Bibliográfica y Crónica Local</strong><br>
+                        Su aportación más destacada y documentada en el ámbito de la historiografía regional es el libro: <em>"Voces y huellas de Mixquiahuala"</em>, publicado en el año 2003. Esta obra es reconocida formalmente e incluso ha sido citada en revistas especializadas de historia nacional, como la revista <strong>BiCentenario</strong> del Instituto Mora, debido a su enorme valor para entender el desarrollo social y agrario de la comunidad.
+                    </p>
+                    
+                    <p class="char-bio">
+                        Asimismo, dentro del municipio es ampliamente reconocida su entrañable labor documentando la historia del deporte local, particularmente el fútbol. A través de crónicas detalladas y ediciones independientes, logró capturar las épocas de gloria de los equipos de la región, un trabajo que hoy en día forma parte del valioso patrimonio cultural e histórico de las familias mixquiahualenses.
+                    </p>
+
+                    <p class="char-bio">
+                        <strong>✨ Legado Histórico</strong><br>
+                        A diferencia de los textos escolares genéricos, el trabajo de Milton Flores Moreno destaca por su calidez y por darle voz a los propios habitantes del pueblo. Su legado permanece como una consulta obligada y un pilar fundamental para cualquier persona que desee entender el pasado, las raíces y el orgullo de Mixquiahuala desde una perspectiva puramente local y auténtica.
+                    </p>
+
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-button btn-close-modal" onclick="closeModal('charModal5')">Cerrar Biografía</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL VICENTE AGUIRRE -->
+<div id="charModal6" class="modal">
+    <div class="modal-char-content">
+        <div class="modal-char-image">
+            <img src="ImagenesLugares/VicenteAguirre.jpg" alt="Vicente Aguirre del Castillo">
+        </div>
+        <div class="modal-char-body">
+            <span class="close" onclick="closeModal('charModal6')">×</span>
+            <div>
+                <div class="modal-header">
+                    <div class="modal-icon" style="color:white;">🏛️</div>
+                    <h2 class="modal-title">Vicente Aguirre del Castillo</h2>
+                </div>
+                <div class="modal-divider"></div>
+                <div class="modal-char-text-container">
+                    
+                    <!-- Ficha de Datos Rápidos -->
+                    <p class="char-bio" style="margin-bottom: 20px; background: rgba(26, 71, 42, 0.05); padding: 15px; border-radius: 8px; border-left: 4px solid #1a472a;">
+                        <strong>📌 Ficha Biográfica:</strong><br>
+                        • <strong>Nombre Completo:</strong> Vicente Aguirre del Castillo<br>
+                        • <strong>Fecha de Nacimiento:</strong> 12 de abril de 1908<br>
+                        • <strong>Lugar de Origen:</strong> Mixquiahuala, Hidalgo<br>
+                        • <strong>Fallecimiento:</strong> 4 de febrero de 1998<br>
+                        • <strong>Ocupación:</strong> Abogado, político, diplomático y Gobernador de Hidalgo
+                    </p>
+
+                    <!-- Cuerpo de la Biografía -->
+                    <p class="char-bio">
+                        Vicente Aguirre del Castillo es considerado una de las figuras políticas más importantes de Hidalgo durante el siglo XX. Nació en Mixquiahuala en el seno de una familia con gran arraigo en el Valle del Mezquital. Realizó sus estudios básicos en Ixmiquilpan y posteriormente se trasladó a la Ciudad de México, donde ingresó a la Escuela Nacional de Jurisprudencia de la UNAM, obteniendo el título de licenciado en Derecho en 1933.
+                    </p>
+
+                    <p class="char-bio">
+                        <strong>⚖️ Carrera y Ascenso Político</strong><br>
+                        Desde temprana edad participó activamente en la vida pública y colaboró estrechamente con Javier Rojo Gómez, uno de los personajes más influyentes de la política hidalguense. Se desempeñó como secretario particular del gobernador y posteriormente ocupó diversos cargos de relevancia nacional: fue diputado federal, senador de la República y dirigente del Partido de la Revolución Mexicana (PRM) en Hidalgo.
+                    </p>
+                    
+                    <p class="char-bio">
+                        <strong>🌱 Mandato y el «Apóstol del Maguey»</strong><br>
+                        En 1945 fue electo Gobernador Constitucional del Estado de Hidalgo, cargo que desempeñó con éxito hasta 1951. Durante su administración impulsó grandes obras de infraestructura, programas de desarrollo agrícola y proyectos para el fortalecimiento económico de la entidad. Además, fue un visionario al promover una mayor participación de las mujeres en la vida política y fomentar políticas orientadas al bienestar de las comunidades rurales.
+                    </p>
+
+                    <p class="char-bio">
+                        Una de las áreas a las que dedicó mayor pasión fue el campo. Gracias a su enorme impulso al cultivo y aprovechamiento integral del maguey, actividad que era el pilar económico de las familias hidalguenses en esa época, recibió el entrañable sobrenombre de <strong>“Apóstol del Maguey”</strong>, reconocimiento histórico con el que se le recuerda con orgullo hasta la actualidad.
+                    </p>
+
+                    <p class="char-bio">
+                        <strong>🌍 Diplomacia y Legado</strong><br>
+                        Después de concluir su mandato de gobernador, continuó participando en la administración pública federal y representó dignamente a México en diversos países de América Latina desempeñando funciones diplomáticas de alto nivel. Su legado permanece como uno de los más importantes en la historia política de Hidalgo, siendo recordado como el gobernador más destacado nacido en la tierra de Mixquiahuala.
+                    </p>
+
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-button btn-close-modal" onclick="closeModal('charModal6')">Cerrar Biografía</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- SCRIPT DE INTERACTIVIDAD GLOBAL -->
+    <script src="js/script.js"></script>
+</body>
+</html>
