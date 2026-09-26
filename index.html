@@ -1,774 +1,542 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mixquiahuala de Juarez - Destino Turístico</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
-    <!-- NAVEGACIÓN -->
-<nav>
-    <div class="nav-brand">Mixquiahuala</div>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Descubre los lugares emblemáticos, la historia y la naturaleza de Mixquiahuala de Juárez, Hidalgo.">
+    <meta name="theme-color" content="#198754">
+    <title>Mixquiahuala de Juárez | Destino turístico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <button class="menu-toggle" id="menuToggle">☰</button>
+</head>
+<body class="bg-body-tertiary">
+    <a class="visually-hidden-focusable position-absolute top-0 start-0 z-3 p-3 bg-white" href="#contenido">Saltar al contenido</a>
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="#lugares">Lugares emblematicos</a></li>
-        <li><a href="Tradiciones.html">Tradiciones de la comunidad</a></li>
-        <li><a href="Mitos.html">Mitos y Leyendas</a></li>        
-        <li><a href="Personajes.html">Personajes emblematicos</a></li>
-    </ul>
-</nav>
-
-    <!-- HERO SECTION -->
-<section class="hero-carousel">
-    <div class="carousel-container">
-        <div class="carousel-slide active" onclick="openImageModal('', 'https://maps.app.goo.gl/EjemploRutaCerro')">
-            <img src="./Imagenes/CERRO.jpg" alt="Cerro de Mixquiahuala">
-            <div class="carousel-caption">
-                <h1>Mixquiahuala de Juárez</h1>
-                <p>Descubre la magia del patrimonio cultural mexicano</p>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm" aria-label="Navegación principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">Mixquiahuala</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir o cerrar el menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                        <li class="nav-item"><a class="nav-link" href="#lugares">Lugares emblemáticos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Tradiciones.html">Tradiciones de la comunidad</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Mitos.html">Mitos y leyendas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Personajes.html">Personajes emblemáticos</a></li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <section class="container-fluid p-0" aria-label="Descubre Mixquiahuala">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Mostrar la Pirámide de Taxhuada"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Mostrar los murales de Colonia Morelos"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Mostrar el Puente de Tunititlan"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="ratio ratio-21x9">
+                            <img src="ImagenesLugares/PiramideTaxhuada_2.jpg" class="d-block w-100 object-fit-cover" alt="Pirámide prehispánica de Taxhuada en Mixquiahuala">
+                        </div>
+                        <div class="carousel-caption d-block">
+                            <div class="bg-dark bg-opacity-50 rounded-3 p-3 p-md-4">
+                                <h1 class="h2 fw-bold">Mixquiahuala de Juárez</h1>
+                                <p class="mb-0">Descubre la magia de nuestro patrimonio cultural.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="ratio ratio-21x9">
+                            <img src="ImagenesLugares/ColoniaMorelos_1.jpg" class="d-block w-100 object-fit-cover" alt="Mural colorido en las calles de Colonia Morelos">
+                        </div>
+                        <div class="carousel-caption d-block">
+                            <div class="bg-dark bg-opacity-50 rounded-3 p-3 p-md-4">
+                                <h2 class="h2 fw-bold">Arte que da vida a la comunidad</h2>
+                                <p class="mb-0">Recorre una galería urbana llena de color e identidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="ratio ratio-21x9">
+                            <img src="ImagenesLugares/PuenteTuni_1.jpg" class="d-block w-100 object-fit-cover" alt="Arcos de piedra del histórico Puente de Tunititlan">
+                        </div>
+                        <div class="carousel-caption d-block">
+                            <div class="bg-dark bg-opacity-50 rounded-3 p-3 p-md-4">
+                                <h2 class="h2 fw-bold">Historia y naturaleza</h2>
+                                <p class="mb-0">Explora los paisajes y rincones emblemáticos del municipio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Diapositiva anterior">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Diapositiva siguiente">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </section>
+
+        <section id="lugares" class="container py-5">
+            <div class="row justify-content-center text-center mb-4 mb-lg-5">
+                <div class="col-lg-8">
+                    <p class="text-success text-uppercase fw-semibold mb-2">Valle del Mezquital · Hidalgo</p>
+                    <h2 class="display-6 fw-bold">Destinos imprescindibles</h2>
+                    <p class="lead text-body-secondary mb-0">Explora los lugares emblemáticos que harán tu visita inolvidable.</p>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col"><article class="card h-100 shadow-sm border-0">
+                    <div class="ratio ratio-4x3"><img src="ImagenesLugares/ColoniaMorelos_1.jpg" class="card-img-top object-fit-cover" alt="Mural artístico en Colonia Morelos"></div>
+                    <div class="card-body d-flex flex-column"><span class="badge text-bg-warning align-self-start mb-2">Arte y cultura</span><h3 class="h5 card-title">Murales en Colonia Morelos</h3><p class="card-text text-body-secondary">Una galería a cielo abierto con obras que reflejan la identidad y creatividad de la comunidad.</p><button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modal1">Descubrir lugar</button></div>
+                </article></div>
+                <div class="col"><article class="card h-100 shadow-sm border-0">
+                    <div class="ratio ratio-4x3"><img src="ImagenesLugares/LaCruz_1.jpg" class="card-img-top object-fit-cover" alt="Mirador natural de La Cruz en Mixquiahuala"></div>
+                    <div class="card-body d-flex flex-column"><span class="badge text-bg-success align-self-start mb-2">Naturaleza</span><h3 class="h5 card-title">Mirador La Cruz</h3><p class="card-text text-body-secondary">Vistas panorámicas, senderos y una cascada natural a pocos minutos del centro.</p><button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modal2">Descubrir lugar</button></div>
+                </article></div>
+                <div class="col"><article class="card h-100 shadow-sm border-0">
+                    <div class="ratio ratio-4x3"><img src="ImagenesLugares/PiramideTaxhuada_2.jpg" class="card-img-top object-fit-cover" alt="Vestigio arqueológico de la Pirámide de Taxhuada"></div>
+                    <div class="card-body d-flex flex-column"><span class="badge text-bg-warning align-self-start mb-2">Patrimonio</span><h3 class="h5 card-title">Pirámide de Taxhuada</h3><p class="card-text text-body-secondary">Un monumento prehispánico que conecta con las raíces históricas de la región.</p><button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modal3">Descubrir lugar</button></div>
+                </article></div>
+                <div class="col"><article class="card h-100 shadow-sm border-0">
+                    <div class="ratio ratio-4x3"><img src="ImagenesLugares/JardinMunicipal_1.jpg" class="card-img-top object-fit-cover" alt="Árboles y andadores del Jardín Municipal"></div>
+                    <div class="card-body d-flex flex-column"><span class="badge text-bg-success align-self-start mb-2">Vida local</span><h3 class="h5 card-title">Jardín Municipal</h3><p class="card-text text-body-secondary">El corazón social del municipio, rodeado por los portales, el palacio y la iglesia.</p><button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modalJardinMunicipal">Descubrir lugar</button></div>
+                </article></div>
+                <div class="col"><article class="card h-100 shadow-sm border-0">
+                    <div class="ratio ratio-4x3"><img src="ImagenesLugares/CasaNarco_1.jpg" class="card-img-top object-fit-cover" alt="Exterior de la antigua Casa del Narco junto a la barranca"></div>
+                    <div class="card-body d-flex flex-column"><span class="badge text-bg-secondary align-self-start mb-2">Arquitectura</span><h3 class="h5 card-title">Casa del Narco</h3><p class="card-text text-body-secondary">Una mansión abandonada de arquitectura singular, cerca del Río Tula y Tunititlan.</p><button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modalCasaNarco">Descubrir lugar</button></div>
+                </article></div>
+                <div class="col"><article class="card h-100 shadow-sm border-0">
+                    <div class="ratio ratio-4x3"><img src="ImagenesLugares/Baño_Grande_1.jpg" class="card-img-top object-fit-cover" alt="Alberca y entorno natural del balneario Baño Grande"></div>
+                    <div class="card-body d-flex flex-column"><span class="badge text-bg-info align-self-start mb-2">Ecoturismo</span><h3 class="h5 card-title">Baño Grande</h3><p class="card-text text-body-secondary">Balneario familiar conocido por sus cascadas, aguas templadas y áreas verdes.</p><button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modalBanoGrande">Descubrir lugar</button></div>
+                </article></div>
+                <div class="col"><article class="card h-100 shadow-sm border-0">
+                    <div class="ratio ratio-4x3"><img src="ImagenesLugares/PuenteTuni_1.jpg" class="card-img-top object-fit-cover" alt="Puente colonial de piedra de Tunititlan sobre el Río Tula"></div>
+                    <div class="card-body d-flex flex-column"><span class="badge text-bg-warning align-self-start mb-2">Historia</span><h3 class="h5 card-title">Puente de Tunititlan</h3><p class="card-text text-body-secondary">El Puente Demiñho: arquitectura civil colonial entre ahuehuetes y el Río Tula.</p><button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modal7">Descubrir lugar</button></div>
+                </article></div>
+                <div class="col"><article class="card h-100 shadow-sm border-0">
+                    <div class="ratio ratio-4x3"><img src="ImagenesLugares/CasaByron_2.jpg" class="card-img-top object-fit-cover" alt="Casa Estudio de Byron Gálvez en Mixquiahuala"></div>
+                    <div class="card-body d-flex flex-column"><span class="badge text-bg-warning align-self-start mb-2">Arte y cultura</span><h3 class="h5 card-title">Casa Estudio Byron Gálvez</h3><p class="card-text text-body-secondary">La casa-museo del pintor y escultor hidalguense, ubicada en la zona de La Cruz.</p><button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modal8">Descubrir lugar</button></div>
+                </article></div>
+                <div class="col"><article class="card h-100 shadow-sm border-0">
+                    <div class="ratio ratio-4x3"><img src="ImagenesLugares/CascadaLaCruz_1.jpg" class="card-img-top object-fit-cover" alt="Cascada rodeada de vegetación en La Cruz"></div>
+                    <div class="card-body d-flex flex-column"><span class="badge text-bg-success align-self-start mb-2">Naturaleza</span><h3 class="h5 card-title">Cascadas de La Cruz</h3><p class="card-text text-body-secondary">Un rincón fresco y verde en la barranca, ideal para caminar y disfrutar el paisaje.</p><button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modal9">Descubrir lugar</button></div>
+                </article></div>
+                <div class="col"><article class="card h-100 shadow-sm border-0">
+                    <div class="ratio ratio-4x3"><img src="ImagenesLugares/RutaBiznagas_1.jpg" class="card-img-top object-fit-cover" alt="Biznagas en el paisaje árido de la ruta del norte"></div>
+                    <div class="card-body d-flex flex-column"><span class="badge text-bg-success align-self-start mb-2">Senderismo</span><h3 class="h5 card-title">Ruta de las Biznagas</h3><p class="card-text text-body-secondary">Un sendero por el paisaje árido del Valle del Mezquital y sus cactus gigantes.</p><button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#modal10">Descubrir lugar</button></div>
+                </article></div>
+            </div>
+        </section>
+
+        <section class="bg-success text-white py-5" aria-label="Invitación">
+            <div class="container text-center"><p class="text-uppercase fw-semibold mb-2">Mixquiahuala te espera</p><h2 class="h3 fw-bold">Tradición, historia y naturaleza en un solo destino</h2><a class="btn btn-warning mt-2" href="Tradiciones.html">Conoce nuestras tradiciones</a></div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white-50 py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+            <p class="mb-0">Mixquiahuala de Juárez, Hidalgo</p>
+            <nav aria-label="Navegación de pie de página"><ul class="nav"><li class="nav-item"><a class="nav-link text-white-50 px-2" href="Tradiciones.html">Tradiciones</a></li><li class="nav-item"><a class="nav-link text-white-50 px-2" href="Mitos.html">Mitos y leyendas</a></li><li class="nav-item"><a class="nav-link text-white-50 px-2" href="Personajes.html">Personajes</a></li></ul></nav>
         </div>
+    </footer>
 
-        <div class="carousel-slide" onclick="openImageModal('../Imagenes/CALVARIO.jpg', 'https://maps.app.goo.gl/EjemploRutaCalvario')">
-            <img src="../Imagenes/CALVARIO.jpg" alt="Feria del Calvario">
-            <div class="carousel-caption">
-                <h1>Feria del Calvario 2026</h1>
-                <p>Historia, cultura y tradición que nos enorgullece</p>
-            </div>
-        </div>
-
-        <div class="carousel-slide" onclick="openImageModal('../Imagenes/PIRAMIDE.jpg', 'https://maps.app.goo.gl/EjemploRutaPiramide')">
-            <img src="../Imagenes/PIRAMIDE.jpg" alt="Cultura en Mixquiahuala">
-            <div class="carousel-caption">
-                <h1>Lugares Emblemáticos</h1>
-                <p>Explora los rincones más icónicos de nuestra región</p>
-            </div>
-        </div>
-
-        <button class="carousel-arrow prev" id="prevSlide">&#10094;</button>
-        <button class="carousel-arrow next" id="nextSlide">&#10095;</button>
-
-        <div class="carousel-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-</section>
-
-<div id="imageModal" class="img-modal">
-    <div class="img-modal-content">
-        <img id="modalTargetImg" src="" alt="Vista ampliada">
-        <div class="img-modal-buttons">
-            <a id="modalMapBtn" href="#" target="_blank" class="btn-modal-action btn-location">📍 Ubicación</a>
-            <button onclick="closeImageModal()" class="btn-modal-action btn-close-img">✖ Cerrar</button>
-        </div>
-    </div>
-</div>
-
-
-    <script src="js/script.js"></script>
-
-<section id="lugares" class="container">
-        <h2 class="section-title">Destinos Imprescindibles</h2>
-        <p class="section-subtitle">Explora los lugares más emblemáticos que harán tu visita inolvidable</p>
-        
-        <div class="places-grid">
-            <div class="place-card">
-                <div class="place-image-container">
-                    <img src="ImagenesLugares\ColoniaMorelos_1.jpg" alt="Murales en Colonia Morelos" class="place-card-img">
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Title" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <div id="gallery1" class="carousel slide h-100 destination-modal-carousel" data-bs-ride="false" aria-label="Galería de murales de Colonia Morelos">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#gallery1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagen 1"></button>
+                                <button type="button" data-bs-target="#gallery1" data-bs-slide-to="1" aria-label="Imagen 2"></button>
+                                <button type="button" data-bs-target="#gallery1" data-bs-slide-to="2" aria-label="Imagen 3"></button>
+                            </div>
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100"><img src="ImagenesLugares/ColoniaMorelos_1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Mural artístico en Colonia Morelos"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/ColoniaMorelos_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Segundo mural de la galería urbana de Colonia Morelos"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/ColoniaMorelos_3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Obra de arte urbano en Colonia Morelos"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#gallery1" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#gallery1" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Arte y cultura</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="modal1Title">Murales en Colonia Morelos</h2>
+                            <p class="text-secondary lead fs-6 lh-lg mb-4">La colonia Morelos se ha convertido en un lienzo a cielo abierto. Sus calles están llenas de color y vida gracias a más de 160 murales realizados por artistas de 22 países. Cada obra cuenta una historia que refleja la identidad de nuestra comunidad.</p>
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">UBICACIÓN</span><span class="fw-bold text-dark">Colonia Morelos, Mixquiahuala</span></div></div>
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">DATO DESTACADO</span><span class="fw-bold text-dark">160+ murales de 22 países</span></div></div>
+                            </div>
+                            <div class="p-3 bg-warning-subtle text-warning-emphasis border-start border-warning border-4 rounded-end mb-4"><small><strong>Tip del visitante:</strong> Recorre las calles Morelos, Abasolo y Allende. Lleva agua y protección solar.</small></div>
+                        </div>
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-end align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                            <a href="https://maps.google.com/?q=Colonia+Morelos+Mixquiahuala+Hidalgo" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm d-inline-flex align-items-center gap-2 destination-location-button"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i>Ver ubicación</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="place-info">
-                    <div class="place-name">Murales en Colonia Morelos</div>
-                    <p class="place-desc">Galería a cielo abierto con obras de arte que reflejan la identidad cultural de la comunidad. Un recorrido colorido por la creatividad local.</p>
-                    <button class="btn-ver-mas" onclick="openModal('modal1')">Ver más →</button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <div class="place-image-container">
-                    <img src="ImagenesLugares/LaCruz_1.jpg" alt="Mirador la Cruz" class="place-card-img">
-                </div>
-                <div class="place-info">
-                    <div class="place-name">Mirador la Cruz</div>
-                    <p class="place-desc">Vistas panorámicas espectaculares desde este punto elevado. Perfecto para fotografía y contemplación del entorno natural.</p>
-                    <button class="btn-ver-mas" onclick="openModal('modal2')">Ver más →</button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <div class="place-image-container">
-                    <img src="ImagenesLugares/PiramideTaxhuada_2.jpg" alt="Pirámide de Taxhuada" class="place-card-img">
-                </div>
-                <div class="place-info">
-                    <div class="place-name">Pirámide de Taxhuada</div>
-                    <p class="place-desc">Vestigio arqueológico que conecta con nuestras raíces prehispánicas. Monumento histórico de gran importancia cultural.</p>
-                    <button class="btn-ver-mas" onclick="openModal('modal3')">Ver más →</button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <div class="place-image-container">
-                    <img src="ImagenesLugares/JardinMunicipal_1.jpg" alt="Jardín Municipal" class="place-card-img">
-                </div>
-                <div class="place-info">
-                    <div class="place-name">Jardín Municipal</div>
-                    <p class="place-desc">El corazón de la vida social de Mixquiahuala. Un espacio arbolado perfecto para caminar, disfrutar los portales y relajarse en familia.</p>
-                    <button class="btn-ver-mas" onclick="openModal('modal4')">Ver más →</button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <div class="place-image-container">
-                    <img src="ImagenesLugares/CasaNarco_1.jpg" alt="Jardín Municipal" class="place-card-img">
-                </div>
-                <div class="place-info">
-                    <div class="place-name">Casa del narco</div>
-                    <p class="place-desc">Se localiza en los límites del municipio, cerca de la ribera del Río Tula y la localidad de Tunititlan</p>
-                    <button class="btn-ver-mas" onclick="openModal('modal5')">Ver más →</button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <div class="place-image-container">
-                    <img src="ImagenesLugares\Baño_Grande_1.jpg" alt="Jardín Municipal" class="place-card-img">
-                </div>
-                <div class="place-info">
-                    <div class="place-name">Baño Grande</div>
-                    <p class="place-desc">Baño Grande, un balneario ecoturístico famoso por sus cascadas y aguas templadas</p>
-                    <button class="btn-ver-mas" onclick="openModal('modal6')">Ver más →</button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <div class="place-image-container">
-                    <img src="ImagenesLugares/PuenteTuni_1.jpg" alt="Jardín Municipal" class="place-card-img">
-                </div>
-                <div class="place-info">
-                    <div class="place-name">Puente de Tunititlan (Puente Demiñho)</div>
-                    <p class="place-desc">este imponente puente de piedra es una de las joyas de la arquitectura civil colonial en la región</p>
-                    <button class="btn-ver-mas" onclick="openModal('modal7')">Ver más →</button>
-                </div>
-            </div>
-
-                        <div class="place-card">
-                <div class="place-image-container">
-                    <img src="ImagenesLugares/CasaByron_2.jpg" alt="Jardín Municipal" class="place-card-img">
-                </div>
-                <div class="place-info">
-                    <div class="place-name">Casa Estudio Byron Gálvez - Eva Beloglovsky</div>
-                    <p class="place-desc">la Casa de Byron Gálvez es el refugio donde el icónico pintor y escultor hidalguense</p>
-                    <button class="btn-ver-mas" onclick="openModal('modal8')">Ver más →</button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <div class="place-image-container">
-                    <img src="ImagenesLugares/CascadasLaCruz_1.jpg" alt="Cascadas de La Cruz" class="place-card-img">
-                </div>
-                <div class="place-info">
-                    <div class="place-name">Cascadas de La Cruz</div>
-                    <p class="place-desc">Ocultadas en la barranca, las Cascadas de La Cruz son un secreto natural rodeado de vegetación y rocas ideales para el senderismo</p>
-                    <button class="btn-ver-mas" onclick="openModal('modal9')">Ver más →</button>
-                </div>
-            </div>
-
-            <div class="place-card">
-                <div class="place-image-container">
-                    <img src="ImagenesLugares/RutaBiznagas_1.jpg" alt="Ruta de las Biznagas" class="place-card-img">
-                </div>
-                <div class="place-info">
-                    <div class="place-name">Ruta de las Biznagas</div>
-                    <p class="place-desc">Ruta de senderismo desde la zona norte que te lleva a un santuario natural con cactus gigantescos de más de dos metros</p>
-                    <button class="btn-ver-mas" onclick="openModal('modal10')">Ver más →</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <div id="modal1" class="modal">
-    <div class="modal-content">
-        
-        <div class="modal-image">
-            <div class="modal-carousel-container">
-                <img class="modal-carousel-slide active" src="ImagenesLugares/ColoniaMorelos_1.jpg" alt="Murales Morelos 1">
-                <img class="modal-carousel-slide" src="ImagenesLugares/ColoniaMorelos_2.jpg" alt="Murales Morelos 2">
-                <img class="modal-carousel-slide" src="ImagenesLugares/ColoniaMorelos_3.jpg" alt="Murales Morelos 3">
-                
-                <button class="modal-carousel-arrow modal-arrow-prev" onclick="changeModalSlide('modal1', -1)">❮</button>
-                <button class="modal-carousel-arrow modal-arrow-next" onclick="changeModalSlide('modal1', 1)">❯</button>
-                
-                <div class="modal-carousel-dots">
-                    <span class="modal-dot active" onclick="currentModalSlide('modal1', 0)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal1', 1)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal1', 2)"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <span class="close" onclick="closeModal('modal1')">×</span>
-            <div class="modal-header">
-                <div class="modal-icon">🎨</div>
-                <h2 class="modal-title">Murales en Colonia Morelos</h2>
-            </div>
-            <div class="modal-divider"></div>
-            <p class="modal-description">
-                La colonia Morelos se ha convertido en un lienzo a cielo abierto. Sus calles están llenas de color y vida gracias a más de 160 murales realizados por artistas de 22 países. Cada obra cuenta una historia, expresa emociones y refleja la identidad de nuestra comunidad. Un recorrido imperdible para los amantes del arte urbano y la cultura.
-            </p>
-            <div class="modal-info-grid">
-                <div class="modal-info-item">
-                    <h4>📍 Ubicación</h4>
-                    <p>Colonia Morelos, Mixquiahuala de Juárez, Hidalgo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>🌍 Datos Curiosos</h4>
-                    <p>Participaron artistas de 22 países en la creación de más de 160 murales, transformando completamente el paisaje urbano de la colonia.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>📸 Recomendación</h4>
-                    <p>Recorre las calles con cámara en mano y descubre detalles únicos. Cada mural es una obra maestra que merece ser apreciada y fotografiada.</p>
-                </div>
-            </div>
-            <div class="modal-tip">
-                <div class="modal-tip-icon">💡</div>
-                <div class="modal-tip-text"><strong>Tip del visitante:</strong> Los mejores murales se encuentran caminando por las calles Morelos, Abasolo y Allende. No olvides llevar agua y bloqueador.</div>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
-                <button class="modal-button btn-close-modal" onclick="closeModal('modal1')">Cerrar</button>
             </div>
         </div>
     </div>
-</div>
 
-    <div id="modal2" class="modal">
-    <div class="modal-content">
-        
-        <!-- Contenedor del Carrusel -->
-        <div class="modal-image">
-            <div class="modal-carousel-container">
-                <!-- Reemplaza el src con la ruta de tus imágenes -->
-                <img class="modal-carousel-slide active" src="ImagenesLugares/LaCruz_1.jpg" alt="La Cruz 1">
-                <img class="modal-carousel-slide" src="ImagenesLugares/LaCruz_2.jpg" alt="La Cruz 2">
-                <img class="modal-carousel-slide" src="ImagenesLugares/LaCruz_3.jpg" alt="La Cruz 3">
-                
-                <!-- Flechas configuradas para modal2 -->
-                <button class="modal-carousel-arrow modal-arrow-prev" onclick="changeModalSlide('modal2', -1)">❮</button>
-                <button class="modal-carousel-arrow modal-arrow-next" onclick="changeModalSlide('modal2', 1)">❯</button>
-                
-                <!-- Puntos configurados para modal2 -->
-                <div class="modal-carousel-dots">
-                    <span class="modal-dot active" onclick="currentModalSlide('modal2', 0)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal2', 1)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal2', 2)"></span>
+    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Title" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <div id="gallery2" class="carousel slide h-100 destination-modal-carousel" data-bs-ride="carousel" aria-label="Galería de La Cruz">
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100"><img src="ImagenesLugares/LaCruz_1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Mirador de La Cruz en Mixquiahuala"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/LaCruz_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Paisaje natural de La Cruz"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/LaCruz_3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Sendero de La Cruz"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#gallery2" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#gallery2" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Naturaleza</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="modal2Title">La Cruz: mirador y cascada natural</h2>
+                            <p class="text-secondary lead fs-6 lh-lg mb-4">A pocos minutos del centro, La Cruz combina senderismo con paisajes impresionantes. Su mirador panorámico y su cascada invitan a disfrutar la aventura, la fotografía y la tranquilidad. El manantial ofrece agua fresca y cristalina.</p>
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">UBICACIÓN</span><span class="fw-bold text-dark">Lerdo de Tejada 68, El Calvario</span></div></div>
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">DATO DESTACADO</span><span class="fw-bold text-dark">Manantial de agua fresca</span></div></div>
+                            </div>
+                            <div class="p-3 bg-warning-subtle text-warning-emphasis border-start border-warning border-4 rounded-end mb-4"><small><strong>Tip del visitante:</strong> Lleva calzado con buen agarre para los senderos y las piedras húmedas. Regresa con todos tus residuos.</small></div>
+                        </div>
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-end align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                            <a href="https://maps.google.com/?q=La+Cruz+Mixquiahuala+Hidalgo" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm d-inline-flex align-items-center gap-2 destination-location-button"><span aria-hidden="true">📍</span>Cómo llegar</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <div class="modal-header">
-                <div class="modal-icon">⛰️</div>
-                <h2 class="modal-title">La Cruz de Mixquiahuala - Mirador y Cascada Natural</h2>
-            </div>
-            <div class="modal-divider"></div>
-            <p class="modal-description">
-                A pocos minutos del centro del municipio, La Cruz de Mixquiahuala es un destino natural que combina el senderismo con paisajes impresionantes. Este paraje destaca por su mirador panorámico y su cascada, ideal para los amantes de la aventura, la fotografía y la tranquilidad.
-            </p>
-            <div class="modal-info-grid">
-                <div class="modal-info-item">
-                    <h4>📍 Ubicación</h4>
-                    <p>Lerdo de Tejada 68, El Calvario, 5ta Demarcación, 42700 Mixquiahuala, Hgo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>❄️ Datos Curiosos</h4>
-                    <p>A diferencia de los balnearios de aguas termales que abundan en el Valle del Mezquital, el agua que brota del manantial de La Cruz es notablemente fresca y cristalina.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>📸 Recomendación</h4>
-                    <p>Recuerda que el mirador de La Cruz es un espacio natural. Al no contar con botes de basura públicos, es obligatorio regresar con todos los desechos para preservar el ecosistema.</p>
-                </div>
-            </div>
-            <div class="modal-tip">
-                <div class="modal-tip-icon">💡</div>
-                <div class="modal-tip-text"><strong>Tip del visitante:</strong> Si vas a bajar a la cascada de La Cruz, es indispensable llevar tenis con buen agarre o calzado acuático para evitar resbalones en las piedras húmedas.</div>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
-                <button class="modal-button btn-close-modal" onclick="closeModal('modal2')">Cerrar</button>
             </div>
         </div>
     </div>
-</div>
 
-    <div id="modal4" class="modal">
-    <div class="modal-content">
-        
-        <div class="modal-image">
-            <div class="modal-carousel-container">
-                <img class="modal-carousel-slide active" src="ImagenesLugares/JardinMunicipal_1.jpg" alt="Jardín Municipal 1">
-                <img class="modal-carousel-slide" src="ImagenesLugares/JardinMunicipal_2.jpg" alt="Jardín Municipal 2">
-                <img class="modal-carousel-slide" src="ImagenesLugares/JardinMunicipal_3.jpg" alt="Jardín Municipal 3">
-                
-                <button class="modal-carousel-arrow modal-arrow-prev" onclick="changeModalSlide('modal4', -1)">❮</button>
-                <button class="modal-carousel-arrow modal-arrow-next" onclick="changeModalSlide('modal4', 1)">❯</button>
-                
-                <div class="modal-carousel-dots">
-                    <span class="modal-dot active" onclick="currentModalSlide('modal4', 0)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal4', 1)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal4', 2)"></span>
+    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Title" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <div id="gallery3" class="carousel carousel-fade h-100 destination-modal-carousel" data-bs-ride="false" aria-label="Galería de la Pirámide de Taxhuada">
+                            <div class="carousel-indicators heritage-indicators">
+                                <button type="button" data-bs-target="#gallery3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagen 1"></button>
+                                <button type="button" data-bs-target="#gallery3" data-bs-slide-to="1" aria-label="Imagen 2"></button>
+                                <button type="button" data-bs-target="#gallery3" data-bs-slide-to="2" aria-label="Imagen 3"></button>
+                            </div>
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100"><img src="ImagenesLugares/PiramideTaxhuada_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Pirámide de Taxhuada, vista principal"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/PiramideTaxhuada_3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Detalle de la Pirámide de Taxhuada"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/PiramideTaxhuada_1" class="d-block w-100 h-100 object-fit-cover" alt="Vista adicional de la Pirámide de Taxhuada"></div>
+                            </div>
+                            <p class="heritage-gallery-note mb-0">Memoria viva del Valle del Mezquital</p>
+                            <button class="carousel-control-prev heritage-control" type="button" data-bs-target="#gallery3" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next heritage-control" type="button" data-bs-target="#gallery3" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div class="modal-header heritage-content-header border-0">
+                            <div>
+                                <span class="badge rounded-pill heritage-badge text-uppercase fw-bold px-3 py-2 mb-3">Patrimonio</span>
+                                <h2 class="heritage-title mb-0" id="modal3Title">Pirámide de Taxhuada</h2>
+                                <p class="text-body-secondary mt-2 mb-0">Pirámide de Donijá · Mixquiahuala de Juárez</p>
+                            </div>
+                            <button type="button" class="btn-close ms-3 flex-shrink-0" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body heritage-body">
+                            <p class="heritage-description text-muted mb-4">Ubicada en el panteón comunitario del barrio de Taxhuada, la Pirámide de Donijá es un <strong>monumento prehispánico</strong> descubierto accidentalmente en 1946, cuando los pobladores extraían piedra para construir la barda del cementerio. Su nombre en otomí se interpreta como <em>«iglesia vieja»</em> o <em>«templo de la flor»</em>.</p>
+                            <div class="row g-3 mb-4">
+                                <div class="col-12"><article class="heritage-info-card d-flex gap-3"><span class="heritage-icon" aria-hidden="true"><i class="bi bi-geo-alt-fill"></i></span><div><h3 class="h6 fw-bold mb-2">Ubicación</h3><p class="text-body-secondary mb-0">Barrio de Taxhuada, Mixquiahuala de Juárez, Hidalgo.</p></div></article></div>
+                                <div class="col-12"><article class="heritage-info-card d-flex gap-3"><span class="heritage-icon" aria-hidden="true"><i class="bi bi-hourglass-split"></i></span><div><h3 class="h6 fw-bold mb-2">Dato destacado</h3><p class="text-body-secondary mb-0">Su estructura reúne influencias indígenas y elementos de la tradición católica, reflejo de distintas etapas históricas.</p></div></article></div>
+                            </div>
+                            <aside class="alert heritage-callout d-flex align-items-start gap-3 mb-0" role="note"><i class="bi bi-leaf-fill heritage-callout-icon fs-4" aria-hidden="true"></i><div><h3 class="h6 fw-bold mb-1">Visita respetuosa</h3><p class="mb-0">El mantenimiento depende de la comunidad. Cuida el monumento, respeta el espacio y no dejes basura.</p></div></aside>
+                        </div>
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-end align-items-center heritage-modal-footer">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                            <a class="btn btn-success rounded-pill px-4 fw-bold shadow-sm d-inline-flex align-items-center gap-2 heritage-map-button" href="https://www.google.com/maps/search/?api=1&query=Pir%C3%A1mide+de+Taxhuada+Mixquiahuala" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📍</span>Cómo llegar</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <span class="close" onclick="closeModal('modal4')">×</span>
-            <div class="modal-header">
-                <div class="modal-icon">🏛️</div>
-                <h2 class="modal-title">Jardín Municipal (Plaza Constitución)</h2>
-            </div>
-            <div class="modal-divider"></div>
-            <p class="modal-description">
-                El Jardín Municipal (también conocido como Plaza Constitución) es el centro de la vida social y cultural del pueblo desde el siglo XIX, un espacio arbolado que conecta el Palacio Municipal, los históricos Portales y la Iglesia de San Antonio de Padua, y que hoy en día sirve como el escenario principal para diferentes eventos.
-            </p>
-            <div class="modal-info-grid">
-                <div class="modal-info-item">
-                    <h4>📍 Ubicación</h4>
-                    <p>Plaza de la Constitución S.N. Centro, 3ra Demarcación, 42700 Mixquiahuala de Juárez, Hgo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>🏛️ Datos Curiosos</h4>
-                    <p>Los portales que rodean el jardín no solo son una reliquia arquitectónica; originalmente fueron diseñados para que los comerciantes locales pudieran protegerse de las lluvias y del fuerte sol sin dejar de vender.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>👨‍👩‍👧‍👦 Recomendación</h4>
-                    <p>El lugar es un espacio público de entrada libre y ambiente 100% familiar. Al ser el corazón del pueblo, ayuda a mantenerlo limpio utilizando los botes de basura distribuidos en los pasillos y respeta las áreas verdes.</p>
-                </div>
-            </div>
-            <div class="modal-tip">
-                <div class="modal-tip-icon">💡</div>
-                <div class="modal-tip-text"><strong>Tip del visitante:</strong> Visítalo un sábado o domingo por la tarde. Es el mejor momento para disfrutar del ambiente local, comprar postres o botanas y ver el jardín lleno de vida.</div>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
-                <button class="modal-button btn-close-modal" onclick="closeModal('modal4')">Cerrar</button>
             </div>
         </div>
     </div>
-</div>
 
-    <div id="modal3" class="modal">
-    <div class="modal-content">
-        
-        <!-- Contenedor del Carrusel -->
-        <div class="modal-image">
-            <div class="modal-carousel-container">
-                <!-- Reemplaza el src con la ruta de tus imágenes -->
-                <img class="modal-carousel-slide active" src="ImagenesLugares/PiramideTaxhuada_2.jpg" alt="Pirámide de Taxhuada 1">
-                <img class="modal-carousel-slide" src="ImagenesLugares/PiramideTaxhuada_3.jpg" alt="Pirámide de Taxhuada 2">
-                <img class="modal-carousel-slide" src="ruta/a/tu/piramide3.jpg" alt="Pirámide de Taxhuada 3">
-                
-                <!-- Flechas configuradas para modal3 -->
-                <button class="modal-carousel-arrow modal-arrow-prev" onclick="changeModalSlide('modal3', -1)">❮</button>
-                <button class="modal-carousel-arrow modal-arrow-next" onclick="changeModalSlide('modal3', 1)">❯</button>
-                
-                <!-- Puntos configurados para modal3 -->
-                <div class="modal-carousel-dots">
-                    <span class="modal-dot active" onclick="currentModalSlide('modal3', 0)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal3', 1)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal3', 2)"></span>
+    <div class="modal fade" id="modalJardinMunicipal" tabindex="-1" aria-labelledby="modalJardinMunicipalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <div id="carousel_JardinMunicipal" class="carousel slide h-100 destination-modal-carousel" data-bs-ride="carousel" aria-label="Galería del Jardín Municipal">
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100"><img src="ImagenesLugares/JardinMunicipal_1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Jardín Municipal de Mixquiahuala"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/JardinMunicipal_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Andadores y áreas verdes del Jardín Municipal"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/JardinMunicipal_3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Portales del centro de Mixquiahuala"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_JardinMunicipal" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel_JardinMunicipal" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-success text-white px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Vida local</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="modalJardinMunicipalTitle">Jardín Municipal</h2>
+                            <p class="text-secondary lead fs-6 lh-lg mb-4">El corazón social del municipio, rodeado por los tradicionales portales, el palacio municipal y la iglesia principal. Un espacio perfecto para caminar, disfrutar del ambiente local y conocer la convivencia comunitaria.</p>
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">UBICACIÓN</span><span class="fw-bold text-dark">Centro Histórico, Mixquiahuala de Juárez</span></div></div>
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">DATO DESTACADO</span><span class="fw-bold text-dark">Punto de encuentro tradicional con arquitectura colonial</span></div></div>
+                            </div>
+                            <div class="p-3 bg-warning-subtle text-warning-emphasis border-start border-warning border-4 rounded-end mb-4"><small><strong>Tip del visitante:</strong> Visítalo al atardecer para disfrutar de los antojitos locales en los portales.</small></div>
+                        </div>
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-end align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                            <a href="https://maps.google.com/?q=Jard%C3%ADn+Municipal+Mixquiahuala+Hidalgo" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm d-inline-flex align-items-center gap-2 destination-location-button"><span aria-hidden="true">📍</span>Cómo llegar</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <span class="close" onclick="closeModal('modal3')">&times;</span>
-            <div class="modal-header">
-                <div class="modal-icon">🔺</div>
-                <h2 class="modal-title">Pirámide de Taxhuada (Pirámide de Donijá)</h2>
-            </div>
-            <div class="modal-divider"></div>
-            <p class="modal-description">
-                Ubicada en el interior del panteón comunitario del barrio de Taxhuada, la Pirámide de Donijá, cuyo nombre en otomí significa "iglesia vieja" o "templo de la flor", es un monumento prehispánico descubierto accidentalmente en 1946 cuando los pobladores extraían piedra para construir la barda del cementerio.
-            </p>
-            <div class="modal-info-grid">
-                <div class="modal-info-item">
-                    <h4>📍 Ubicación</h4>
-                    <p>I Zaragoza, 7ma Demarcación, 42700 Mixquiahuala, Hgo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>🏛️ Datos Curiosos</h4>
-                    <p>La pirámide une tres épocas: tiene base tolteca, fachada azteca y una cruz en la punta que mezcla el pasado indígena con la religión católica.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>🚪 Información Práctica</h4>
-                    <p>El lugar es de entrada libre y no tiene restricciones de horario. Su mantenimiento depende por completo de los vecinos, así que por favor cuida el monumento y no dejes basura.</p>
-                </div>
-            </div>
-            <div class="modal-tip">
-                <div class="modal-tip-icon">💡</div>
-                <div class="modal-tip-text"><strong>Tip del visitante:</strong> Visítala el 1 y 2 de noviembre. Durante el Día de Muertos, el panteón y la pirámide se llenan de flores, decoraciones y ofrendas, creando una atmósfera especial y emotiva.</div>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
-                <button class="modal-button btn-close-modal" onclick="closeModal('modal3')">Cerrar</button>
             </div>
         </div>
     </div>
-</div>
 
-    <div id="modal5" class="modal">
-    <div class="modal-content">
-        
-        <div class="modal-image">
-            <div class="modal-carousel-container">
-                <img class="modal-carousel-slide active" src="ImagenesLugares/CasaNarco_1.jpg" alt="Casa del Narco 1">
-                <img class="modal-carousel-slide" src="ImagenesLugares/CasaNarco_2.jpg" alt="Casa del Narco 2">
-                <img class="modal-carousel-slide" src="ImagenesLugares/CasaNarco_3.jpg" alt="Casa del Narco 3">
-                
-                <button class="modal-carousel-arrow modal-arrow-prev" onclick="changeModalSlide('modal5', -1)">❮</button>
-                <button class="modal-carousel-arrow modal-arrow-next" onclick="changeModalSlide('modal5', 1)">❯</button>
-                
-                <div class="modal-carousel-dots">
-                    <span class="modal-dot active" onclick="currentModalSlide('modal5', 0)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal5', 1)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal5', 2)"></span>
+    <div class="modal fade" id="modalCasaNarco" tabindex="-1" aria-labelledby="modalCasaNarcoTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <div id="carousel_CasaNarco" class="carousel slide h-100 destination-modal-carousel" data-bs-ride="carousel" aria-label="Galería de la Casa del Narco">
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100"><img src="ImagenesLugares/CasaNarco_1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Casa del Narco cerca de la barranca"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/CasaNarco_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Vista de la estructura abandonada"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/CasaNarco_3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Detalle de la arquitectura de la Casa del Narco"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_CasaNarco" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel_CasaNarco" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-secondary text-white px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Arquitectura</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="modalCasaNarcoTitle">Casa del Narco</h2>
+                            <p class="text-secondary lead fs-6 lh-lg mb-4">Una enigmática estructura abandonada de arquitectura singular ubicada cerca del Río Tula y Tunititlán. Se ha convertido en un punto de interés visual e intriga histórica para los visitantes de la región.</p>
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">UBICACIÓN</span><span class="fw-bold text-dark">Cercanías del Río Tula y Tunititlán, Mixquiahuala</span></div></div>
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">DATO DESTACADO</span><span class="fw-bold text-dark">Arquitectura atípica rodeada de paisaje natural</span></div></div>
+                            </div>
+                            <div class="p-3 bg-warning-subtle text-warning-emphasis border-start border-warning border-4 rounded-end mb-4"><small><strong>Tip del visitante:</strong> Mantén la precaución al explorar los alrededores y respeta las zonas señalizadas. No ingreses a estructuras inestables.</small></div>
+                        </div>
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-end align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                            <a href="https://maps.google.com/?q=Casa+del+Narco+Rio+Tula+Tunititlan+Mixquiahuala" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm d-inline-flex align-items-center gap-2 destination-location-button"><span aria-hidden="true">📍</span>Cómo llegar</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <span class="close" onclick="closeModal('modal5')">×</span>
-            <div class="modal-header">
-                <div class="modal-icon">🏚️</div>
-                <h2 class="modal-title">Casa del Narco</h2>
-            </div>
-            <div class="modal-divider"></div>
-            <p class="modal-description">
-                Se localiza en los límites del municipio, cerca de la ribera del Río Tula y la localidad de Tunititlan, la "Casa del Narco" es una gran y misteriosa mansión abandonada que se ha convertido en un punto de gran interés para los amantes del turismo de exploración en Mixquiahuala. Es famosa por su imponente arquitectura incrustada en una barranca, sus albercas olvidadas y una misteriosa red de túneles y grutas subterráneas.
-            </p>
-            <div class="modal-info-grid">
-                <div class="modal-info-item">
-                    <h4>📍 Ubicación</h4>
-                    <p>6QP7+CR, 7ma Demarcación, 42700 Mixquiahuala de Juárez, Hgo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>🔎 Datos Curiosos</h4>
-                    <p>Su origen es el secreto mejor guardado de la zona: muchos aseguran que perteneció a un capo del narcotráfico, pero otros dicen que fue la lujosa casa de descanso de un importante empresario o banquero.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>⚠️ Recomendación</h4>
-                    <p>El sitio está abandonado y en obra gris, por lo que el acceso corre bajo tu propio riesgo. Se recomienda ir de día, ya sea en grupo o acompañados por un guía local</p>
-                </div>
-            </div>
-            <div class="modal-tip">
-                <div class="modal-tip-icon">💡</div>
-                <div class="modal-tip-text"><strong>Tip del visitante:</strong> Es necesario llevar calzado antiderrapante y una buena lámpara de mano, ya que los caminos de roca son muy oscuros, húmedos y resbaladizos.</div>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
-                <button class="modal-button btn-close-modal" onclick="closeModal('modal5')">Cerrar</button>
             </div>
         </div>
     </div>
-</div>
 
-    <div id="modal6" class="modal">
-    <div class="modal-content">
-        
-        <div class="modal-image">
-            <div class="modal-carousel-container">
-                <img class="modal-carousel-slide active" src="ImagenesLugares/Baño_Grande_1.jpg" alt="Baño Grande 1">
-                <img class="modal-carousel-slide" src="ImagenesLugares/Baño_Grande_2.jpg" alt="Baño Grande 2">
-                <img class="modal-carousel-slide" src="ImagenesLugares/Baño_Grande_3.jpg" alt="Baño Grande 3">
-                
-                <button class="modal-carousel-arrow modal-arrow-prev" onclick="changeModalSlide(-1)">❮</button>
-                <button class="modal-carousel-arrow modal-arrow-next" onclick="changeModalSlide(1)">❯</button>
-                
-                <div class="modal-carousel-dots">
-                    <span class="modal-dot active" onclick="currentModalSlide(0)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide(1)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide(2)"></span>
+    <div class="modal fade" id="modalBanoGrande" tabindex="-1" aria-labelledby="modalBanoGrandeTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <div id="carousel_BanoGrande" class="carousel slide h-100 destination-modal-carousel" data-bs-ride="carousel" aria-label="Galería de Baño Grande">
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100"><img src="ImagenesLugares/Baño_Grande_1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Instalaciones de Baño Grande"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/Baño_Grande_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Áreas recreativas y alberca de Baño Grande"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/Baño_Grande_3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Entorno natural del balneario Baño Grande"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_BanoGrande" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel_BanoGrande" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-info text-white px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Ecoturismo</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="modalBanoGrandeTitle">Baño Grande</h2>
+                            <p class="text-secondary lead fs-6 lh-lg mb-4">Un popular balneario familiar rodeado de áreas verdes y conocido por sus caídas de agua, cascadas naturales y manantiales de aguas templadas ideales para el descanso y la recreación al aire libre.</p>
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">UBICACIÓN</span><span class="fw-bold text-dark">Zona de Manantiales, Mixquiahuala de Juárez</span></div></div>
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">DATO DESTACADO</span><span class="fw-bold text-dark">Manantiales naturales de aguas templadas y ambiente familiar</span></div></div>
+                            </div>
+                            <div class="p-3 bg-warning-subtle text-warning-emphasis border-start border-warning border-4 rounded-end mb-4"><small><strong>Tip del visitante:</strong> Lleva ropa de cambio, calzado cómodo para agua y protector solar biodegradable.</small></div>
+                        </div>
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-end align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                            <a href="https://maps.google.com/?q=Ba%C3%B1o+Grande+Mixquiahuala+Hidalgo" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm d-inline-flex align-items-center gap-2 destination-location-button"><span aria-hidden="true">📍</span>Cómo llegar</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <span class="close" onclick="closeModal('modal6')">×</span>
-            <div class="modal-header">
-                <div class="modal-icon">🏊</div>
-                <h2 class="modal-title">Baño Grande</h2>
-            </div>
-            <div class="modal-divider"></div>
-            <p class="modal-description">
-                En el Barrio los Tigres, a solo unos minutos del centro de Mixquiahuala, se encuentra Baño Grande, un balneario ecoturístico famoso por sus cascadas y aguas templadas. Este oasis familiar es perfecto para quitarse el calor, descansar en sus extensas áreas verdes y disfrutar de la naturaleza.
-            </p>
-            <div class="modal-info-grid">
-                <div class="modal-info-item">
-                    <h4>📍 Ubicación</h4>
-                    <p>Calle bajada a Baño Grande, Calle Vicente Suarez, Mixquiahuala de Juárez, Hgo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>💧 Datos Curiosos</h4>
-                    <p>El agua nunca se estanca; proviene de manantiales locales, corre por las albercas y alimenta al Río Tula.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>🕐 Horarios y Precios</h4>
-                    <p>Abre diario de 7:00 am a 6:00 pm. Entrada ~$60 MXN (aplica descuento con INE local).</p>
-                </div>
-            </div>
-            <div class="modal-tip">
-                <div class="modal-tip-icon">💡</div>
-                <div class="modal-tip-text"><strong>Tip del visitante:</strong> El traje de baño es obligatorio. Lleva bloqueador y llega temprano para alcanzar lugares con sombra.</div>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
-                <button class="modal-button btn-close-modal" onclick="closeModal('modal6')">Cerrar</button>
             </div>
         </div>
     </div>
-</div>
 
-    <div id="modal7" class="modal">
-    <div class="modal-content">
-        
-        <div class="modal-image">
-            <div class="modal-carousel-container">
-                <img class="modal-carousel-slide active" src="ImagenesLugares/PuenteTuni_1.jpg" alt="Puente de Tunititlan 1">
-                <img class="modal-carousel-slide" src="ImagenesLugares/PuenteTuni_2.jpg" alt="Puente de Tunititlan 2">
-                <img class="modal-carousel-slide" src="ImagenesLugares/PuenteTuni_3.jpg" alt="Puente de Tunititlan 3">
-                
-                <button class="modal-carousel-arrow modal-arrow-prev" onclick="changeModalSlide('modal7', -1)">❮</button>
-                <button class="modal-carousel-arrow modal-arrow-next" onclick="changeModalSlide('modal7', 1)">❯</button>
-                
-                <div class="modal-carousel-dots">
-                    <span class="modal-dot active" onclick="currentModalSlide('modal7', 0)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal7', 1)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal7', 2)"></span>
+    <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="modal7Title" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <div id="gallery7" class="carousel slide h-100 destination-modal-carousel" data-bs-ride="carousel" aria-label="Galería del Puente de Tunititlan">
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100"><img src="ImagenesLugares/PuenteTuni_1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Vista del Puente de Tunititlan"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/PuenteTuni_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Arcos coloniales del puente"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/PuenteTuni_3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Puente histórico rodeado de árboles"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#gallery7" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#gallery7" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Historia</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="modal7Title">Puente de Tunititlan (Puente Demiñho)</h2>
+                            <p class="text-secondary lead fs-6 lh-lg mb-4">Este puente de piedra cruza el Río Tula y conecta Mixquiahuala con Tunititlan. Sus arcos antiguos y los ahuehuetes que crecen a las orillas lo convierten en un punto de interés para la fotografía, el ciclismo y las caminatas.</p>
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">UBICACIÓN</span><span class="fw-bold text-dark">Av. Melchor Ocampo, 7.ª Demarcación, Mixquiahuala</span></div></div>
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">DATO DESTACADO</span><span class="fw-bold text-dark">Arcos de piedra junto a antiguos ahuehuetes</span></div></div>
+                            </div>
+                            <div class="p-3 bg-warning-subtle text-warning-emphasis border-start border-warning border-4 rounded-end mb-4"><small><strong>Tip del visitante:</strong> Visítalo antes del atardecer, con precaución al caminar y respetando la estructura histórica.</small></div>
+                        </div>
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-end align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                            <a href="https://maps.google.com/?q=Puente+de+Tunititlan+Mixquiahuala" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm d-inline-flex align-items-center gap-2 destination-location-button"><span aria-hidden="true">📍</span>Cómo llegar</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <span class="close" onclick="closeModal('modal7')">×</span>
-            <div class="modal-header">
-                <div class="modal-icon">🌉</div>
-                <h2 class="modal-title">Puente de Tunititlan (Puente Demiñho)</h2>
-            </div>
-            <div class="modal-divider"></div>
-            <p class="modal-description">
-                Cruzando el Río Tula para conectar a Mixquiahuala con la comunidad de Tunititlan, este imponente puente de piedra es una de las joyas de la arquitectura civil colonial en la región. Su estructura de arcos antiguos rodeada de imponentes árboles de ahuehuete lo convierte en un punto ideal para los amantes de la fotografía histórica, el ciclismo de ruta y las caminatas al atardecer.
-            </p>
-            <div class="modal-info-grid">
-                <div class="modal-info-item">
-                    <h4>📍 Ubicación</h4>
-                    <p>
-                        Parque puente de la Cruz, Av. Melchor Ocampo, 7ma Demarcación, 42700 Mixquiahuala, Hgo.
-                    </p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>🌳 Datos Curiosos</h4>
-                    <p>
-                        Los gigantescos árboles que crecen a los costados del río junto al puente son sabinos (ahuehuetes), algunos de los cuales tienen cientos de años y son de los ejemplares más antiguos de la región. 
-                    </p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>⚠️ Recomendación</h4>
-                    <p>
-                        Al ser un puente antiguo que aún se utiliza ten extrema precaución al caminar por las orillas. De la misma manera, no dejes basura para proteger las áreas naturales y respeta la estructura histórica. 
-                    </p>
-                </div>
-            </div>
-            <div class="modal-tip">
-                <div class="modal-tip-icon">💡</div>
-                <div class="modal-tip-text"><strong>Tip del visitante:</strong> La mejor hora para visitarlo es justo antes del atardecer, ya que la luz del sol resalta la textura de la piedra vieja y el reflejo de los arcos en el agua. Lleva repelente para mosquitos ya que hay bastantes.
-                </div>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
-                <button class="modal-button btn-close-modal" onclick="closeModal('modal7')">Cerrar</button>
             </div>
         </div>
     </div>
-</div>
 
-    <div id="modal8" class="modal">
-    <div class="modal-content">
-        
-        <!-- Contenedor del Carrusel -->
-        <div class="modal-image">
-            <div class="modal-carousel-container">
-                <!-- Reemplaza el src con la ruta de tus imágenes -->
-                <img class="modal-carousel-slide active" src="ImagenesLugares/Casa_Byron_1.jpg" alt="Casa Estudio 1">
-                <img class="modal-carousel-slide" src="ImagenesLugares/CasaByron_2.jpg" alt="Casa Estudio 2">
-                
-                <!-- Flechas (Nota que ahora dicen 'modal8') -->
-                <button class="modal-carousel-arrow modal-arrow-prev" onclick="changeModalSlide('modal8', -1)">❮</button>
-                <button class="modal-carousel-arrow modal-arrow-next" onclick="changeModalSlide('modal8', 1)">❯</button>
-                
-                <!-- Puntos (Nota que ahora dicen 'modal8') -->
-                <div class="modal-carousel-dots">
-                    <span class="modal-dot active" onclick="currentModalSlide('modal8', 0)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal8', 1)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal8', 2)"></span>
+    <div class="modal fade" id="modal8" tabindex="-1" aria-labelledby="modal8Title" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <div id="gallery8" class="carousel slide h-100 destination-modal-carousel" data-bs-ride="carousel" aria-label="Galería de la Casa Estudio">
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100"><img src="ImagenesLugares/Casa_Byron_1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Casa Estudio de Byron Gálvez"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/CasaByron_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Vista de la casa y estudio de Byron Gálvez"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#gallery8" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#gallery8" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Arte y cultura</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="modal8Title">Casa Estudio Byron Gálvez - Eva Beloglovsky</h2>
+                            <p class="text-secondary lead fs-6 lh-lg mb-4">Ubicada en la zona de La Cruz, la Casa de Byron Gálvez fue el refugio donde el pintor y escultor hidalguense creó gran parte de su obra. Este espacio de memoria artística conserva talleres, pinturas y esculturas, además de ofrecer vistas hacia la barranca.</p>
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">UBICACIÓN</span><span class="fw-bold text-dark">Lerdo de Tejada, zona de La Cruz</span></div></div>
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">DATO DESTACADO</span><span class="fw-bold text-dark">Taller y casa-museo del artista hidalguense</span></div></div>
+                            </div>
+                            <div class="p-3 bg-warning-subtle text-warning-emphasis border-start border-warning border-4 rounded-end mb-4"><small><strong>Tip del visitante:</strong> El espacio es privado y no tiene horario fijo. Contacta a sus gestores y confirma disponibilidad antes de ir.</small></div>
+                        </div>
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-end align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                            <a href="https://maps.google.com/?q=Casa+Estudio+Byron+Galvez+Mixquiahuala" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm d-inline-flex align-items-center gap-2 destination-location-button"><span aria-hidden="true">📍</span>Cómo llegar</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <span class="close" onclick="closeModal('modal8')">×</span>
-            <div class="modal-header">
-                <div class="modal-icon">🔺</div>
-                <h2 class="modal-title">Casa Estudio Byron Gálvez - Eva Beloglovsky</h2>
-            </div>
-            <div class="modal-divider"></div>
-            <p class="modal-description">
-                Ubicada en la Calle Lerdo de Tejada (zona de La Cruz), la Casa de Byron Gálvez es el refugio donde el icónico pintor y escultor hidalguense creó gran parte de su obra. Convertido hoy en una casa-museo y archivo vivo, este espacio independiente te permite explorar sus talleres con paredes de cristal, observar de cerca pinturas y esculturas originales, y disfrutar de una vista espectacular al filo de la barranca.
-            </p>
-            <div class="modal-info-grid">
-                <div class="modal-info-item">
-                    <h4>📍 Ubicación</h4>
-                    <p>Lerdo de Tejada 63, La Pena, 5ta Demarcación, 42700 Mixquiahuala de Juárez, Hgo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>🏛️ Datos Curiosos</h4>
-                    <p>El portón de hierro forjado de la entrada destaca por sus formas que simulan burbujas en el metal. Fue creado por el artesano local Luciano Antonio Mera.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>📸 Recomendación</h4>
-                    <p>Al ser un espacio privado, no tiene un horario fijo de visitas. Contacta a los gestores locales para programar una visita guiada antes de ir.</p>
-                </div>
-            </div>
-            <div class="modal-tip">
-                <div class="modal-tip-icon">💡</div>
-                <div class="modal-tip-text"><strong>Tip del visitante:</strong> Combina tu visita con la Capilla de La Cruz y el mirador al río. En el estudio, pon atención a los ventanales; están orientados geométricamente para captar la luz natural perfecta a cualquier hora.</div>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
-                <button class="modal-button btn-close-modal" onclick="closeModal('modal8')">Cerrar</button>
             </div>
         </div>
     </div>
-</div>
 
-    <div id="modal9" class="modal">
-    <div class="modal-content">
-        
-        <div class="modal-image">
-            <div class="modal-carousel-container">
-                <img class="modal-carousel-slide active" src="ImagenesLugares/CascadaLaCruz_1.jpg" alt="Cascadas de La Cruz 1">
-                <img class="modal-carousel-slide" src="ImagenesLugares/CascadaLaCruz_2.jpg" alt="Cascadas de La Cruz 2">
-                <img class="modal-carousel-slide" src="ImagenesLugares/CascadaLaCruz_3.jpg" alt="Cascadas de La Cruz 3">
-                
-                <button class="modal-carousel-arrow modal-arrow-prev" onclick="changeModalSlide('modal9', -1)">❮</button>
-                <button class="modal-carousel-arrow modal-arrow-next" onclick="changeModalSlide('modal9', 1)">❯</button>
-                
-                <div class="modal-carousel-dots">
-                    <span class="modal-dot active" onclick="currentModalSlide('modal9', 0)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal9', 1)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal9', 2)"></span>
+    <div class="modal fade" id="modal9" tabindex="-1" aria-labelledby="modal9Title" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <div id="gallery9" class="carousel slide h-100 destination-modal-carousel" data-bs-ride="carousel" aria-label="Galería de las Cascadas de La Cruz">
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100"><img src="ImagenesLugares/CascadaLaCruz_1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Cascada de La Cruz entre rocas y vegetación"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/CascadaLaCruz_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Caída de agua en la barranca de La Cruz"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/CascadaLaCruz_3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Vegetación en las Cascadas de La Cruz"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#gallery9" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#gallery9" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-success text-white px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Naturaleza</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="modal9Title">Cascadas de La Cruz</h2>
+                            <p class="text-secondary lead fs-6 lh-lg mb-4">Ocultas en la barranca, bajo el mirador, las Cascadas de La Cruz son un rincón natural rodeado de vegetación y rocas. La humedad de la barranca crea un ambiente fresco y verde, ideal para el senderismo, la fotografía y el descanso.</p>
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">UBICACIÓN</span><span class="fw-bold text-dark">Zona de La Cruz, Mixquiahuala de Juárez</span></div></div>
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">DATO DESTACADO</span><span class="fw-bold text-dark">Microclima fresco y vegetación en la barranca</span></div></div>
+                            </div>
+                            <div class="p-3 bg-warning-subtle text-warning-emphasis border-start border-warning border-4 rounded-end mb-4"><small><strong>Tip del visitante:</strong> Lleva calzado con buen agarre; las piedras pueden ser resbaladizas. Regresa con toda tu basura.</small></div>
+                        </div>
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-end align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                            <a href="https://maps.google.com/?q=Cascadas+La+Cruz+Mixquiahuala" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm d-inline-flex align-items-center gap-2 destination-location-button"><span aria-hidden="true">📍</span>Cómo llegar</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <span class="close" onclick="closeModal('modal9')">×</span>
-            <div class="modal-header">
-                <div class="modal-icon">💧</div>
-                <h2 class="modal-title">Cascadas de La Cruz</h2>
-            </div>
-            <div class="modal-divider"></div>
-            <p class="modal-description">
-                Ocultadas en la barranca, justo debajo del emblemático mirador, las Cascadas de La Cruz son un secreto natural de Mixquiahuala. Su caída de agua rodeada de vegetación y rocas la convierten en el destino ideal para el senderismo, la fotografía y el descanso.
-            </p>
-            <div class="modal-info-grid">
-                <div class="modal-info-item">
-                    <h4>📍 Ubicación</h4>
-                    <p>Juan Aldama 100, La Pena, 2da Demarcación, 42700 Mixquiahuala, Hgo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>🌿 Datos Curiosos</h4>
-                    <p>Aunque el clima de Mixquiahuala es seco, la humedad atrapada en el fondo de la barranca cambia el ambiente por completo, creando un ecosistema fresco, verde y lleno de musgo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>📸 Recomendación</h4>
-                    <p>Las cascadas están en un espacio natural virgen sin botes de basura; es obligatorio regresar con toda tu basura. Si decides darte un chapuzón, hazlo con mucha precaución.</p>
-                </div>
-            </div>
-            <div class="modal-tip">
-                <div class="modal-tip-icon">💡</div>
-                <div class="modal-tip-text"><strong>Tip del visitante:</strong> Para bajar a la base es muy necesario llevar tenis con buen agarre, pues las piedras son muy resbaladizas. No olvides llevar una toalla y una muda de ropa seca dentro de tu mochila.
-                </div>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
-                <button class="modal-button btn-close-modal" onclick="closeModal('modal9')">Cerrar</button>
             </div>
         </div>
     </div>
-</div>
 
-    <div id="modal10" class="modal">
-    <div class="modal-content">
-        
-        <div class="modal-image">
-            <div class="modal-carousel-container">
-                <img class="modal-carousel-slide active" src="ImagenesLugares/RutaBiznagas_1.jpg" alt="Ruta de las Biznagas 1">
-                <img class="modal-carousel-slide" src="ImagenesLugares/RutaBiznagas_2.jpg" alt="Ruta de las Biznagas 2">
-                <img class="modal-carousel-slide" src="ImagenesLugares/RutaBiznagas_3.jpg" alt="Ruta de las Biznagas 3">
-                
-                <button class="modal-carousel-arrow modal-arrow-prev" onclick="changeModalSlide('modal10', -1)">❮</button>
-                <button class="modal-carousel-arrow modal-arrow-next" onclick="changeModalSlide('modal10', 1)">❯</button>
-                
-                <div class="modal-carousel-dots">
-                    <span class="modal-dot active" onclick="currentModalSlide('modal10', 0)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal10', 1)"></span>
-                    <span class="modal-dot" onclick="currentModalSlide('modal10', 2)"></span>
+    <div class="modal fade" id="modal10" tabindex="-1" aria-labelledby="modal10Title" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <div id="gallery10" class="carousel slide h-100 destination-modal-carousel" data-bs-ride="carousel" aria-label="Galería de la Ruta de las Biznagas">
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100"><img src="ImagenesLugares/RutaBiznagas_1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Biznagas en el cerro"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/RutaBiznagas_2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Sendero de la Ruta de las Biznagas"></div>
+                                <div class="carousel-item h-100"><img src="ImagenesLugares/RutaBiznagas_3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Paisaje del Cerro de las Biznagas"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#gallery10" data-bs-slide="prev" aria-label="Imagen anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#gallery10" data-bs-slide="next" aria-label="Imagen siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-success text-white px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Senderismo</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="modal10Title">Ruta de las Biznagas</h2>
+                            <p class="text-secondary lead fs-6 lh-lg mb-4">Desde la zona norte de Mixquiahuala, esta ruta de senderismo conduce al Cerro de las Biznagas, un santuario natural con cactus que pueden superar los dos metros de altura. El paisaje árido ofrece una experiencia singular en el Valle del Mezquital.</p>
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">UBICACIÓN</span><span class="fw-bold text-dark">Zona norte, límite ejidal con Texcatepec</span></div></div>
+                                <div class="col-6"><div class="p-3 border rounded-3 bg-light h-100"><span class="d-block text-muted small fw-semibold">DATO DESTACADO</span><span class="fw-bold text-dark">Cactus gigantes de crecimiento muy lento</span></div></div>
+                            </div>
+                            <div class="p-3 bg-warning-subtle text-warning-emphasis border-start border-warning border-4 rounded-end mb-4"><small><strong>Tip del visitante:</strong> Consulta a un guía local. Lleva agua, sombrero, protección solar y permanece en los senderos para no dañar las biznagas.</small></div>
+                        </div>
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-end align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                            <a href="https://maps.google.com/?q=Cerro+de+las+Biznagas+Mixquiahuala+Hidalgo" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm d-inline-flex align-items-center gap-2 destination-location-button"><span aria-hidden="true">📍</span>Cómo llegar</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="modal-body">
-            <span class="close" onclick="closeModal('modal10')">×</span>
-            <div class="modal-header">
-                <div class="modal-icon">🌵</div>
-                <h2 class="modal-title">Ruta de las Biznagas</h2>
-            </div>
-            <div class="modal-divider"></div>
-            <p class="modal-description">
-                Desde la zona norte de Mixquiahuala, esta ruta de senderismo te lleva directo al Cerro de las Biznagas, un santuario natural famoso por albergar cactus gigantescos que superan los dos metros de altura. Es el recorrido perfecto para los amantes del ecoturismo, la fotografía de paisaje y las caminatas de exploración en un entorno árido único dentro del Valle del Mezquital.
-            </p>
-            <div class="modal-info-grid">
-                <div class="modal-info-item">
-                    <h4>📍 Ubicación</h4>
-                    <p>Franja norte de Mixquiahuala de Juárez, en el límite ejidal con Texcatepec, Hidalgo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>🌵 Datos Curiosos</h4>
-                    <p>Estas biznagas crecen apenas un centímetro por año. Los ejemplares que superan el metro de altura tienen entre 150 y 200 años de edad, siendo verdaderos sobrevivientes del tiempo.</p>
-                </div>
-                <div class="modal-info-item">
-                    <h4>📸 Recomendación</h4>
-                    <p>Contrata a un guía local para recorrer los senderos correctos de forma segura. Está prohibido tocar las espinas, mover piedras o salirte del camino marcado, ya que podrías dañar a los brotes jóvenes.</p>
-                </div>
-            </div>
-            <div class="modal-tip">
-                <div class="modal-tip-icon">💡</div>
-                <div class="modal-tip-text"><strong>Tip del visitante:</strong> El terreno es árido, pedregoso y sin sombra. Lleva calzado de suela gruesa, sombrero, bloqueador y suficiente agua. El mejor horario para iniciar la ruta desde Mixquiahuala es al amanecer.
-                </div>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-direction" onclick="window.open('https://maps.google.com', '_blank')">📍 Cómo llegar</button>
-                <button class="modal-button btn-close-modal" onclick="closeModal('modal10')">Cerrar</button>
             </div>
         </div>
     </div>
-</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
