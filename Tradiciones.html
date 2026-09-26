@@ -6,116 +6,15 @@
     <title>Tradiciones y Costumbres - Mixquiahuala</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
-    <style>
-        /* ─────────────────────────────────────────────────────────
-           ESTILOS ESPECÍFICOS PARA LA PÁGINA DE TRADICIONES
-        ─────────────────────────────────────────────────────────── */
-        .intro-section {
-            background: linear-gradient(180deg, #f0f0f0 0%, #f8f8f8 100%);
-            padding: 60px 20px 20px;
-            text-align: center;
-        }
-
-        /* Modales Especiales: Imagen Izquierda, Texto Cultural Derecha Scrolleable */
-        .modal-trad-content {
-            background-color: white;
-            margin: 50px auto;
-            padding: 0;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 1100px;
-            display: grid;
-            grid-template-columns: 1.1fr 1.9fr; /* Proporción ideal para fotografías de festividades */
-            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-            animation: slideInModal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            overflow: hidden;
-        }
-
-        .modal-trad-image {
-            width: 100%;
-            height: 100%;
-            min-height: 480px;
-            position: relative;
-        }
-
-        .modal-trad-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .modal-trad-body {
-            padding: 45px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .modal-trad-text-container {
-            overflow-y: auto;
-            max-height: 340px; /* Altura perfecta para la lectura del scroll interno */
-            padding-right: 15px;
-            margin-bottom: 20px;
-        }
-
-        /* Barra de scroll personalizada con la identidad visual verde */
-        .modal-trad-text-container::-webkit-scrollbar {
-            width: 6px;
-        }
-        .modal-trad-text-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        .modal-trad-text-container::-webkit-scrollbar-thumb {
-            background: #1a472a;
-            border-radius: 10px;
-        }
-
-        .trad-text {
-            font-family: 'Lora', serif;
-            color: #444;
-            line-height: 1.9;
-            font-size: 1.05em;
-            white-space: pre-line;
-        }
-
-        .trad-date-tag {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(26, 71, 42, 0.1) 0%, rgba(26, 71, 42, 0.15) 100%);
-            color: #1a472a;
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 768px) {
-            .modal-trad-content {
-                grid-template-columns: 1fr;
-                margin: 20px auto;
-            }
-            .modal-trad-image {
-                min-height: 280px;
-                height: 280px;
-            }
-            .modal-trad-text-container {
-                max-height: none;
-                overflow-y: visible;
-            }
-        }
-    </style>
+   
 </head>
 <body>
 
     <!-- NAVEGACIÓN -->
-    <nav>
+    <nav aria-label="Navegación principal">
         <div class="nav-brand">Tradiciones</div>
-        
-        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú de navegación">☰</button>
 
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">🏡 Home Principal</a></li>
@@ -136,88 +35,77 @@
     <!-- CUADRÍCULA DE TRADICIONES -->
     <section id="tradiciones" class="container section--compact">
         <div class="places-grid">
-            
-            <!-- TRADICIÓN 1: El Carnaval -->
-
-
-            <!-- TRADICIÓN 4: Pone y Quita Bandera -->
-            <div class="place-card">
+            <article class="place-card">
                 <div class="place-image-container">
-                    <img src="./Imagenes/PoneQuitaBandera.jpg" alt="Ceremonia del Pone y Quita Bandera" class="place-card-img place-card-img--compact">
+                    <img src="./TRADICIONES/ponebandera3.jpg" alt="Ceremonia del Pone y Quita Bandera" class="place-card-img place-card-img--compact">
                 </div>
                 <div class="place-info">
                     <span class="trad-date-tag">Previo a Semana Santa</span>
-                    <div class="place-name">Pone y Quita Bandera</div>
+                    <h3 class="place-name">Pone y Quita Bandera</h3>
                     <p class="place-desc">Místico rito agrícola de origen otomí para la petición de lluvias y fertilidad. Una celebración sagrada a cargo de mayordomías que envuelve rituales de sangre y platillos ceremoniales.</p>
-                    <button class="btn-ver-mas" onclick="openModal('tradModal4')">Explorar Fiesta →</button>
+                    <button class="btn-ver-mas" type="button" onclick="openModal('tradModal4')">Explorar Fiesta →</button>
                 </div>
-            </div>
+            </article>
 
-            <!-- TRADICIÓN 3: Día de Muertos en Taxhuada -->
-            <div class="place-card">
+            <article class="place-card">
                 <div class="place-image-container">
-                    <img src="ImagenesLugares/PiramideTaxhuada_2.jpg" alt="Día de Muertos" class="place-card-img place-card-img--compact">
+                    <img src="ImagenesLugares/PiramideTaxhuada_2.jpg" alt="Pirámide de Taxhuada durante la temporada de Día de Muertos" class="place-card-img place-card-img--compact">
                 </div>
                 <div class="place-info">
-                    <span class="trad-date-tag">1 y 2 de Noviembre</span>
-                    <div class="place-name">Día de Muertos y Ofrendas</div>
+                    <span class="trad-date-tag">1 y 2 de noviembre</span>
+                    <h3 class="place-name">Día de Muertos y Ofrendas</h3>
                     <p class="place-desc">Una conmovedora fusión de raíces prehispánicas otomíes y católicas. El panteón comunitario y la pirámide se transforman con flores de cempasúchil.</p>
-                    <button class="btn-ver-mas" onclick="openModal('tradModal3')">Explorar Fiesta →</button>
+                    <button class="btn-ver-mas" type="button" onclick="openModal('tradModal3')">Explorar Fiesta →</button>
                 </div>
-            </div>
+            </article>
 
-            <!-- TRADICIÓN 1: El Carnaval -->
-<div class="place-card">
-    <div class="place-image-container">
-        <img src="./Imagenes/Carnaval.jpg" alt="Carnaval de Mixquiahuala" class="place-card-img place-card-img--compact">
-    </div>
-    <div class="place-info">
-        <span class="trad-date-tag">Febrero / Marzo</span>
-        <div class="place-name">Carnaval de Mixquiahuala</div>
-        <p class="place-desc">Con más de 80 años de tradición, es una semana completa de fiesta masiva. Destaca por su Teatro del Pueblo gratuito y una espectacular cartelera de múltiples desfiles temáticos.</p>
-        <button class="btn-ver-mas" onclick="openModal('tradModal1')">Explorar Fiesta →</button>
-    </div>
-</div>
+            <article class="place-card">
+                <div class="place-image-container">
+                    <img src="./TRADICIONES/carnaval.png" alt="Carnaval de Mixquiahuala" class="place-card-img place-card-img--compact">
+                </div>
+                <div class="place-info">
+                    <span class="trad-date-tag">Febrero / marzo</span>
+                    <h3 class="place-name">Carnaval de Mixquiahuala</h3>
+                    <p class="place-desc">Con más de 80 años de tradición, es una semana completa de fiesta masiva. Destaca por su Teatro del Pueblo gratuito y una espectacular cartelera de múltiples desfiles temáticos.</p>
+                    <button class="btn-ver-mas" type="button" onclick="openModal('tradModal1')">Explorar Fiesta →</button>
+                </div>
+            </article>
 
-<!-- TRADICIÓN 2: Feria del Calvario -->
-<div class="place-card">
-    <div class="place-image-container">
-        <img src="../Imagenes/CALVARIO.jpg" alt="Feria del Señor del Calvario" class="place-card-img place-card-img--compact">
-    </div>
-    <div class="place-info">
-        <span class="trad-date-tag">Julio (Semana de la Octava)</span>
-        <div class="place-name">Feria del Señor del Calvario</div>
-        <p class="place-desc">La celebración religiosa y popular más sagrada del municipio. Paraliza la región con monumentales alfombras de aserrín, torneos de charrería, pirotecnia y Teatro del Pueblo.</p>
-        <button class="btn-ver-mas" onclick="openModal('tradModal2')">Explorar Fiesta →</button>
-    </div>
-</div>
+            <article class="place-card">
+                <div class="place-image-container">
+                    <img src="./TRADICIONES/feria.jpg" alt="Feria del Señor del Calvario" class="place-card-img place-card-img--compact">
+                </div>
+                <div class="place-info">
+                    <span class="trad-date-tag">Julio, semana de la Octava</span>
+                    <h3 class="place-name">Feria del Señor del Calvario</h3>
+                    <p class="place-desc">La celebración religiosa y popular más sagrada del municipio. Paraliza la región con monumentales alfombras de aserrín, torneos de charrería, pirotecnia y Teatro del Pueblo.</p>
+                    <button class="btn-ver-mas" type="button" onclick="openModal('tradModal2')">Explorar Fiesta →</button>
+                </div>
+            </article>
 
-<!-- TRADICIÓN 3: Fiesta de la Santa Cruz -->
-<div class="place-card">
-    <div class="place-image-container">
-        <img src="ImagenesLugares/PuenteTuni_1.jpg" alt="Fiesta de la Santa Cruz" class="place-card-img place-card-img--compact">
-    </div>
-    <div class="place-info">
-        <span class="trad-date-tag">3 de Mayo</span>
-        <div class="place-name">Fiesta de la Santa Cruz</div>
-        <p class="place-desc">Una entrañable festividad celebrada en el histórico Barrio de El Puente. Fusiona la devoción de los albañiles con verbenas populares y la espectacular decoración floral del puente colonial.</p>
-        <button class="btn-ver-mas" onclick="openModal('tradModal30')">Explorar Fiesta →</button>
-    </div>
-</div>
+            <article class="place-card">
+                <div class="place-image-container">
+                    <img src="ImagenesLugares/PuenteTuni_1.jpg" alt="Puente de Tunititlan, sede de la Fiesta de la Santa Cruz" class="place-card-img place-card-img--compact">
+                </div>
+                <div class="place-info">
+                    <span class="trad-date-tag">3 de mayo</span>
+                    <h3 class="place-name">Fiesta de la Santa Cruz</h3>
+                    <p class="place-desc">Una entrañable festividad celebrada en el histórico Barrio de El Puente. Fusiona la devoción de los albañiles con verbenas populares y la espectacular decoración floral del puente colonial.</p>
+                    <button class="btn-ver-mas" type="button" onclick="openModal('tradModal30')">Explorar Fiesta →</button>
+                </div>
+            </article>
 
-<!-- TRADICIÓN 5: Fiesta Patronal de San Antonio de Padua -->
-<div class="place-card">
-    <div class="place-image-container">
-        <img src="./Imagenes/SanAntonio.jpg" alt="Parroquia de San Antonio de Padua" class="place-card-img place-card-img--compact">
-    </div>
-    <div class="place-info">
-        <span class="trad-date-tag">13 de Junio</span>
-        <div class="place-name">San Antonio de Padua</div>
-        <p class="place-desc">La solemne festividad del santo patrono municipal celebrada en su imponente parroquia fortaleza del siglo XVI. Un día de fe familiar, bandas de viento ininterrumpidas y banquetes de barbacoa y ximbó.</p>
-        <button class="btn-ver-mas" onclick="openModal('tradModal5')">Explorar Fiesta →</button>
-    </div>
-</div>
-
+            <article class="place-card">
+                <div class="place-image-container">
+                    <img src="./TRADICIONES/ponebandera2.jpg" alt="Parroquia de San Antonio de Padua" class="place-card-img place-card-img--compact">
+                </div>
+                <div class="place-info">
+                    <span class="trad-date-tag">13 de junio</span>
+                    <h3 class="place-name">San Antonio de Padua</h3>
+                    <p class="place-desc">La solemne festividad del santo patrono municipal celebrada en su imponente parroquia fortaleza del siglo XVI. Un día de fe familiar, bandas de viento ininterrumpidas y banquetes de barbacoa y ximbó.</p>
+                    <button class="btn-ver-mas" type="button" onclick="openModal('tradModal5')">Explorar Fiesta →</button>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -225,54 +113,35 @@
        VENTANAS EMERGENTES (MODALES DE TRADICIONES)
     ─────────────────────────────────────────────────────────── -->
 
-    <!-- MODAL 1: CARNAVAL -->
-    <div id="tradModal1" class="modal">
-        <div class="modal-trad-content">
-            <div class="modal-trad-image">
-                <img src="./Imagenes/CERRO.jpg" alt="Carnaval" class="trad-image--carnival">
-            </div>
-            <div class="modal-trad-body">
-                <span class="close" onclick="closeModal('tradModal1')">×</span>
-                <div>
-                    <div class="modal-header">
-                        <div class="modal-icon modal-icon--light">🎭</div>
-                        <h2 class="modal-title">Carnaval y el Pone-Bandera</h2>
-                    </div>
-                    <div class="modal-divider"></div>
-                    <div class="modal-trad-text-container">
-                        <p class="trad-text">
-                            El Carnaval de Mixquiahuala de Juárez es catalogado como uno de los encuentros culturales y de esparcimiento más antiguos, vistosos e identitarios de todo el Valle del Mezquital. Celebrado anualmente en los días previos al Miércoles de Ceniza, esta festividad transforma las calles céntricas en un río interminable de música, comparsas y carros alegóricos con temáticas ingeniosas.
-
-                            Sin embargo, el verdadero corazón místico de esta tradición radica en el ancestral ritual del "Pone-Bandera". 
-                            
-                            Este acto consiste en una mayordomía comunitaria de origen prehispánico y sincrético, donde los encargados religiosos y civiles ascienden portando estandartes e insignias sagradas que bendicen los linderos del ejido para asegurar la fertilidad de las tierras de cultivo y atraer buenas lluvias. El carnaval concluye con magnas coronaciones de reyes, bailes masivos en la plaza y una gastronomía desbordante donde el pulque y la barbacoa son los anfitriones indiscutibles.
-                        </p>
-                    </div>
-                </div>
-                <div class="modal-buttons">
-                    <button class="modal-button btn-close-modal" onclick="closeModal('tradModal1')">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL 2: FERIA DEL CALVARIO -->
     <!-- MODAL PONE Y QUITA BANDERA -->
-<div id="tradModal4" class="modal">
+<!-- Modal 4: Pone y Quita Bandera -->
+<div id="tradModal4" class="modal traditions-modal">
     <div class="modal-trad-content">
         <div class="modal-trad-image">
-            <img src="./Imagenes/PoneQuitaBandera.jpg" alt="Ceremonia del Pone y Quita Bandera">
+            <img class="tradition-carousel-slide active" src="./TRADICIONES/ponebandera1.jpg" alt="Ceremonia del Pone y Quita Bandera, imagen 1" aria-hidden="false">
+            <img class="tradition-carousel-slide" src="./TRADICIONES/ponebandera2.jpg" alt="Ceremonia del Pone y Quita Bandera, imagen 2" aria-hidden="true">
+            <img class="tradition-carousel-slide" src="./TRADICIONES/ponebandera3.jpg" alt="Ceremonia del Pone y Quita Bandera, imagen 3" aria-hidden="true">
+            <button class="carousel-prev" type="button" onclick="changeSlide('tradModal4', -1)" aria-label="Imagen anterior">❮</button>
+            <button class="carousel-next" type="button" onclick="changeSlide('tradModal4', 1)" aria-label="Imagen siguiente">❯</button>
+            <div class="carousel-indicators" role="group" aria-label="Seleccionar imagen">
+                <span class="active" role="button" tabindex="0" aria-label="Mostrar imagen 1" aria-pressed="true" onclick="goToSlide('tradModal4', 0)"></span>
+                <span role="button" tabindex="0" aria-label="Mostrar imagen 2" aria-pressed="false" onclick="goToSlide('tradModal4', 1)"></span>
+                <span role="button" tabindex="0" aria-label="Mostrar imagen 3" aria-pressed="false" onclick="goToSlide('tradModal4', 2)"></span>
+            </div>
         </div>
+
         <div class="modal-trad-body">
-            <span class="close" onclick="closeModal('tradModal4')">×</span>
+            <!-- Único botón de cierre (X) arriba a la derecha -->
+            <span class="close" onclick="closeModal('tradModal4')">&times;</span>
+            
             <div>
                 <div class="modal-header">
                     <div class="modal-icon modal-icon--light">✨</div>
                     <h2 class="modal-title">La Ceremonia Ancestral del "Pone y Quita Bandera"</h2>
                 </div>
                 <div class="modal-divider"></div>
+                
                 <div class="modal-trad-text-container">
-                    
                     <!-- Bloque Destacado de Patrimonio -->
                     <p class="trad-text trad-text--feature">
                         <strong>🏛️ Iniciativa de Salvaguarda:</strong><br>
@@ -289,7 +158,7 @@
                     <p class="trad-text">
                         <strong>❓ ¿En qué consiste el ritual?</strong><br>
                         • <strong>El "Pone Bandera" (Inicio del ciclo):</strong> Los mayordomos, cargueros y la comunidad entera se reúnen para colocar banderas de colores específicos en la Iglesia de San Antonio de Padua (La Iglesia del Centro), así como en diversas capillas y ermitas locales. Estas banderas simbolizan la protección espiritual sobre el pueblo y los campos de cultivo.<br><br>
-                        • <strong>El místico "Corta Gallo":</strong> Se trata de un rito donde el sacrificio ceremonial del ave representa un tributo de sangre a la tierra para asegurar la vida y la prosperidad. Es un acto de profundo respeto comunitario, guiado por rezanderos y los guardianes de la tradición.<br><br>
+                        • <strong>El místico "Corta Gallo":</strong> Se trata de un rito donde el sacrificio ceremonial del ave representa un tributo de sangre a la tierra para asegurar la vida y la prosperidad. Es an acto de profundo respeto comunitario, guiado por rezanderos y los guardianes de la tradición.<br><br>
                         • <strong>El "Quita Bandera" (Cierre y resguardo):</strong> Semanas después, al concluir el periodo ceremonial, las banderas son retiradas con la misma solemnidad, guardándose hasta el próximo año como reliquias sagradas que ya han cumplido su misión protectora.
                     </p>
 
@@ -311,18 +180,15 @@
                         <strong>💡 Nota para el visitante:</strong><br>
                         Participar en el "Pone y Quita Bandera" es adentrarse en el México profundo. No es solo un espectáculo visual; es una experiencia comunitaria entrañable donde las familias abren las puertas de sus hogares para compartir el mole, el pulque y la herencia viva de sus antepasados.
                     </p>
-
                 </div>
             </div>
-            <div class="modal-buttons">
-                <button class="modal-button btn-close-modal" onclick="closeModal('tradModal4')">Cerrar</button>
-            </div>
+            <!-- Se eliminó el div class="modal-buttons" y el botón inferior -->
         </div>
     </div>
 </div>
 
-    <!-- MODAL 3: DÍA DE MUERTOS -->
-    <div id="tradModal3" class="modal">
+    <!-- MODAL DÍA DE MUERTOS -->
+    <div id="tradModal3" class="modal traditions-modal">
         <div class="modal-trad-content">
             <div class="modal-trad-image">
                 <img src="ImagenesLugares/PiramideTaxhuada_2.jpg" alt="Día de Muertos en el Panteón">
@@ -346,17 +212,16 @@
                     </div>
                 </div>
                 <div class="modal-buttons">
-                    <button class="modal-button btn-close-modal" onclick="closeModal('tradModal3')">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL EL CARNAVAL -->
-<div id="tradModal1" class="modal">
+    <!-- MODAL CARNAVAL -->
+<div id="tradModal1" class="modal traditions-modal">
     <div class="modal-trad-content">
         <div class="modal-trad-image">
-            <img src="./Imagenes/Carnaval.jpg" alt="Gran Carnaval de Mixquiahuala">
+            <img src="TRADICIONES/carnaval.png" alt="Gran Carnaval de Mixquiahuala">
         </div>
         <div class="modal-trad-body">
             <span class="close" onclick="closeModal('tradModal1')">×</span>
@@ -417,17 +282,16 @@
                 </div>
             </div>
             <div class="modal-buttons">
-                <button class="modal-button btn-close-modal" onclick="closeModal('tradModal1')">Cerrar</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- MODAL SEÑOR DEL CALVARIO -->
-<div id="tradModal2" class="modal">
+<div id="tradModal2" class="modal traditions-modal">
     <div class="modal-trad-content">
         <div class="modal-trad-image">
-            <img src="../Imagenes/CALVARIO.jpg" alt="Fiesta del Señor del Calvario">
+            <img src="./TRADICIONES/feria.jpg" alt="Fiesta del Señor del Calvario">
         </div>
         <div class="modal-trad-body">
             <span class="close" onclick="closeModal('tradModal2')">×</span>
@@ -484,7 +348,6 @@
                 </div>
             </div>
             <div class="modal-buttons">
-                <button class="modal-button btn-close-modal" onclick="closeModal('tradModal2')">Cerrar</button>
             </div>
         </div>
     </div>
@@ -492,7 +355,7 @@
 
 
 <!-- MODAL FIESTA DE LA SANTA CRUZ -->
-<div id="tradModal30" class="modal">
+<div id="tradModal30" class="modal traditions-modal">
     <div class="modal-trad-content">
         <div class="modal-trad-image">
             <img src="ImagenesLugares/PuenteTuni_1.jpg" alt="Fiesta de la Santa Cruz en el Barrio de El Puente">
@@ -548,17 +411,16 @@
                 </div>
             </div>
             <div class="modal-buttons">
-                <button class="modal-button btn-close-modal" onclick="closeModal('tradModal30')">Cerrar</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- MODAL SAN ANTONIO DE PADUA -->
-<div id="tradModal5" class="modal">
+<div id="tradModal5" class="modal traditions-modal">
     <div class="modal-trad-content">
         <div class="modal-trad-image">
-            <img src="./Imagenes/SanAntonio.jpg" alt="Parroquia de San Antonio de Padua">
+            <img src="./TRADICIONES/ponebandera2.jpg" alt="Parroquia de San Antonio de Padua">
         </div>
         <div class="modal-trad-body">
             <span class="close" onclick="closeModal('tradModal5')">×</span>
@@ -625,7 +487,6 @@
                 </div>
             </div>
             <div class="modal-buttons">
-                <button class="modal-button btn-close-modal" onclick="closeModal('tradModal5')">Cerrar</button>
             </div>
         </div>
     </div>
