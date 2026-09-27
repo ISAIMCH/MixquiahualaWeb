@@ -1,6 +1,7 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
+    // 1. Lógica del Menú Desplegable / Hamburguesa
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // 2. Lógica del Buscador de Mitos y Leyendas
     const mythSearch = document.getElementById("mythSearch");
     if (mythSearch) {
         const cards = document.querySelectorAll(".myth-card");
@@ -33,47 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             cards.forEach((card) => {
                 const matches = card.dataset.title.toLowerCase().includes(query);
-                card.hidden = !matches;
-                hasResults ||= matches;
+                
+                // Muestra u oculta las tarjetas según la búsqueda
+                if (matches) {
+                    card.classList.remove("d-none");
+                    hasResults = true;
+                } else {
+                    card.classList.add("d-none");
+                }
             });
 
+            // Muestra el mensaje si no hay coincidencias
             if (noResults) {
-                noResults.hidden = hasResults;
+                if (hasResults) {
+                    noResults.classList.add("d-none");
+                } else {
+                    noResults.classList.remove("d-none");
+                }
             }
         });
-    }
-});
-
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (!modal) return;
-
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-}
-
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (!modal) return;
-
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-
-    const anotherModalIsOpen = [...document.querySelectorAll(".modal")].some(
-        (candidate) => candidate.classList.contains("is-open"),
-    );
-    if (!anotherModalIsOpen) {
-        document.body.classList.remove("modal-open");
-    }
-}
-
-document.addEventListener("click", (event) => {
-    if (
-        event.target instanceof HTMLElement &&
-        event.target.classList.contains("modal") &&
-        event.target.classList.contains("is-open")
-    ) {
-        closeModal(event.target.id);
     }
 });

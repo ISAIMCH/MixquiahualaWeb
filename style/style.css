@@ -752,15 +752,8 @@ body.modal-open {
 
 .modal-content {
     background-color: white;
-    margin: 50px auto;
-    padding: 0;
     border-radius: 20px;
-    width: 90%;
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: 1fr 1.8fr;
     box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-    animation: slideInModal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     overflow: hidden;
 }
 
@@ -1601,4 +1594,18 @@ footer::before {
     .destination-modal-info {
         animation: none;
     }
+}
+/* ─────────────────────────────────────────────────────────
+   CORRECCIÓN DE Z-INDEX PARA MODALES DE BOOTSTRAP
+─────────────────────────────────────────────────────────── */
+.modal-backdrop {
+    z-index: 1040 !important;
+}
+
+.modal {
+    z-index: 1050 !important;
+}
+
+.modal-dialog {
+    z-index: 1060 !important;
 }
