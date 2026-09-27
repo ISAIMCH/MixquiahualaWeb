@@ -1,35 +1,46 @@
 <!doctype html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Explora las historias, misterios y leyendas transmitidas de generación en generación en Mixquiahuala de Juárez.">
+    <meta name="description"
+        content="Explora las historias, misterios y leyendas transmitidas de generación en generación en Mixquiahuala de Juárez.">
     <meta name="theme-color" content="#198754">
     <title>Mitos y Leyendas | Mixquiahuala de Juárez</title>
     <!-- CSS Bootstrap 5 y Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body class="bg-body-tertiary">
-    <a class="visually-hidden-focusable position-absolute top-0 start-0 z-3 p-3 bg-white" href="#contenido">Saltar al contenido</a>
+    <a class="visually-hidden-focusable position-absolute top-0 start-0 z-3 p-3 bg-white" href="#contenido">Saltar al
+        contenido</a>
 
     <!-- NAVEGACIÓN PRINCIPAL -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm" aria-label="Navegación principal">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm"
+            aria-label="Navegación principal">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="index.html">Mixquiahuala</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir o cerrar el menú">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation"
+                    aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir o cerrar el menú">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNavigation">
                     <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                         <li class="nav-item"><a class="nav-link" href="index.html#lugares">Lugares emblemáticos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Tradiciones.html">Tradiciones de la comunidad</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="Mitos.html">Mitos y leyendas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Tradiciones.html">Tradiciones de la comunidad</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="Mitos.html">Mitos y
+                                leyendas</a></li>
                         <li class="nav-item"><a class="nav-link" href="Personajes.html">Personajes emblemáticos</a></li>
                     </ul>
                 </div>
@@ -44,14 +55,17 @@
                 <p class="text-success text-uppercase fw-semibold mb-2">Historias y Misterios · Valle del Mezquital</p>
                 <h1 class="display-5 fw-bold text-dark mb-3">Relatos del Mezquital</h1>
                 <p class="lead text-body-secondary mx-auto mb-4" style="max-width: 700px;">
-                    Explora las historias, misterios y leyendas transmitidas de generación en generación en Mixquiahuala.
+                    Explora las historias, misterios y leyendas transmitidas de generación en generación en
+                    Mixquiahuala.
                 </p>
-                
+
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6">
                         <div class="input-group input-group-lg shadow-sm">
-                            <span class="input-group-text bg-white border-end-0 text-success"><i class="bi bi-search"></i></span>
-                            <input type="text" id="mythSearch" class="form-control border-start-0 ps-0" placeholder="Escribe para buscar un mito o leyenda...">
+                            <span class="input-group-text bg-white border-end-0 text-success"><i
+                                    class="bi bi-search"></i></span>
+                            <input type="text" id="mythSearch" class="form-control border-start-0 ps-0"
+                                placeholder="Escribe para buscar un mito o leyenda...">
                         </div>
                     </div>
                 </div>
@@ -60,67 +74,77 @@
 
         <!-- REJILLA DE RELATOS Y MITOS -->
 
-<section id="mitos" class="container py-5">
-    <div class="alert alert-warning text-center d-none" id="noResults" role="alert">
-        No se encontraron mitos o leyendas que coincidan con tu búsqueda.
-    </div>
+        <section id="mitos" class="container py-5">
+            <div class="alert alert-warning text-center d-none" id="noResults" role="alert">
+                No se encontraron mitos o leyendas que coincidan con tu búsqueda.
+            </div>
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        
-        <!-- TARJETA 1 -->
-        <div class="col myth-card" data-title="la llorona rio tula leyendas">
-            <article class="card h-100 shadow-sm border-0">
-                <div class="ratio ratio-4x3">
-                    <img src="./ImagenesLeyendas/LaLlorona.webp" class="card-img-top object-fit-cover" alt="Río Tula al atardecer">
-                </div>
-                <div class="card-body d-flex flex-column">
-                    <span class="badge text-bg-warning align-self-start mb-2">Leyenda popular</span>
-                    <h3 class="h5 card-title">La Llorona en el Río Tula</h3>
-                    <p class="card-text text-body-secondary">Pobladores cercanos a las riberas del río aseguran escuchar lamentos desgarradores durante las noches de luna llena.</p>
-                    <button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#mythModal1">Leer relato →</button>
-                </div>
-            </article>
-        </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
-        <!-- TARJETA 2 -->
-        <div class="col myth-card" data-title="el charro negro cerro mitos">
-            <article class="card h-100 shadow-sm border-0">
-                <div class="ratio ratio-4x3">
-                    <img src="./ImagenesLeyendas/CharroNegro.webp" class="card-img-top object-fit-cover" alt="Cerro de Mixquiahuala">
+                <!-- TARJETA 1 -->
+                <div class="col myth-card" data-title="la llorona rio tula leyendas">
+                    <article class="card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-4x3">
+                            <img src="./ImagenesLeyendas/LaLlorona.webp" class="card-img-top object-fit-cover"
+                                alt="Río Tula al atardecer">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-warning align-self-start mb-2">Leyenda popular</span>
+                            <h3 class="h5 card-title">La Llorona en el Río Tula</h3>
+                            <p class="card-text text-body-secondary">Pobladores cercanos a las riberas del río aseguran
+                                escuchar lamentos desgarradores durante las noches de luna llena.</p>
+                            <button class="btn btn-success mt-auto align-self-start" type="button"
+                                data-bs-toggle="modal" data-bs-target="#mythModal1">Leer relato →</button>
+                        </div>
+                    </article>
                 </div>
-                <div class="card-body d-flex flex-column">
-                    <span class="badge text-bg-dark align-self-start mb-2">Mito urbano</span>
-                    <h3 class="h5 card-title">El Charro Negro del Cerro</h3>
-                    <p class="card-text text-body-secondary">La conocida historia del hombre elegante a caballo que ronda los senderos del cerro buscando viajeros solitarios.</p>
-                    <button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#mythModal2">Leer relato →</button>
-                </div>
-            </article>
-        </div>
 
-        <!-- TARJETA 3 -->
-        <div class="col myth-card" data-title="los tuneles secretos casa narco misterio">
-            <article class="card h-100 shadow-sm border-0">
-                <div class="ratio ratio-4x3">
-                    <img src="./ImagenesLeyendas/TunelesOcultos.jpg" class="card-img-top object-fit-cover" alt="Estructura abandonada en Tunititlán">
+                <!-- TARJETA 2 -->
+                <div class="col myth-card" data-title="el charro negro cerro mitos">
+                    <article class="card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-4x3">
+                            <img src="./ImagenesLeyendas/CharroNegro.webp" class="card-img-top object-fit-cover"
+                                alt="Cerro de Mixquiahuala">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-dark align-self-start mb-2">Mito urbano</span>
+                            <h3 class="h5 card-title">El Charro Negro del Cerro</h3>
+                            <p class="card-text text-body-secondary">La conocida historia del hombre elegante a caballo
+                                que ronda los senderos del cerro buscando viajeros solitarios.</p>
+                            <button class="btn btn-success mt-auto align-self-start" type="button"
+                                data-bs-toggle="modal" data-bs-target="#mythModal2">Leer relato →</button>
+                        </div>
+                    </article>
                 </div>
-                <div class="card-body d-flex flex-column">
-                    <span class="badge text-bg-secondary align-self-start mb-2">Misterio local</span>
-                    <h3 class="h5 card-title">Los Túneles Ocultos</h3>
-                    <p class="card-text text-body-secondary">Mitos urbanos sobre pasadizos subterráneos ocultos en las barrancas que conectan antiguos puntos del municipio.</p>
-                    <button class="btn btn-success mt-auto align-self-start" type="button" data-bs-toggle="modal" data-bs-target="#mythModal3">Leer relato →</button>
-                </div>
-            </article>
-        </div>
 
-    </div>
-</section>
+                <!-- TARJETA 3 -->
+                <div class="col myth-card" data-title="los tuneles secretos casa narco misterio">
+                    <article class="card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-4x3">
+                            <img src="./ImagenesLeyendas/TunelesOcultos.jpg" class="card-img-top object-fit-cover"
+                                alt="Estructura abandonada en Tunititlán">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-secondary align-self-start mb-2">Misterio local</span>
+                            <h3 class="h5 card-title">Los Túneles Ocultos</h3>
+                            <p class="card-text text-body-secondary">Mitos urbanos sobre pasadizos subterráneos ocultos
+                                en las barrancas que conectan antiguos puntos del municipio.</p>
+                            <button class="btn btn-success mt-auto align-self-start" type="button"
+                                data-bs-toggle="modal" data-bs-target="#mythModal3">Leer relato →</button>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
 
         <!-- SECCIÓN DE LLAMADO A LA ACCIÓN -->
         <section class="bg-success text-white py-5" aria-label="Invitación">
             <div class="container text-center">
                 <p class="text-uppercase fw-semibold mb-2">Descubre la riqueza cultural</p>
                 <h2 class="h3 fw-bold">Tradición, historia y naturaleza en un solo destino</h2>
-                <a class="btn btn-warning fw-bold mt-2 rounded-pill px-4" href="Tradiciones.html">Conoce nuestras tradiciones</a>
+                <a class="btn btn-warning fw-bold mt-2 rounded-pill px-4" href="Tradiciones.html">Conoce nuestras
+                    tradiciones</a>
             </div>
         </section>
     </main>
@@ -131,9 +155,12 @@
             <p class="mb-0">Mixquiahuala de Juárez, Hidalgo</p>
             <nav aria-label="Navegación de pie de página">
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white-50 px-2" href="Tradiciones.html">Tradiciones</a></li>
-                    <li class="nav-item"><a class="nav-link text-white-50 px-2" href="Mitos.html">Mitos y leyendas</a></li>
-                    <li class="nav-item"><a class="nav-link text-white-50 px-2" href="Personajes.html">Personajes</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50 px-2" href="Tradiciones.html">Tradiciones</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white-50 px-2" href="Mitos.html">Mitos y leyendas</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white-50 px-2" href="Personajes.html">Personajes</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -143,25 +170,41 @@
     <div class="modal fade" id="mythModal1" tabindex="-1" aria-labelledby="mythModal1Title" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
             <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
-                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <button type="button"
+                    class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm"
+                    data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 <div class="row g-0 destination-modal-row">
                     <div class="col-lg-6 position-relative destination-modal-gallery">
-                        <img src="./ImagenesLeyendas/LaLlorona.webp" class="d-block w-100 h-100 object-fit-cover" alt="Río Tula">
+                        <img src="./ImagenesLeyendas/LaLlorona.webp" class="d-block w-100 h-100 object-fit-cover"
+                            alt="Río Tula">
                     </div>
-                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                    <div
+                        class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
                         <div>
-                            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Leyenda popular</span>
-                            <h2 class="display-6 fw-bold text-dark mb-3" id="mythModal1Title">La Llorona en el Río Tula</h2>
-                            <div class="p-3 border rounded-3 bg-light mb-4" style="max-height: 280px; overflow-y: auto;">
+                            <span
+                                class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Leyenda
+                                popular</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="mythModal1Title">La Llorona en el Río Tula
+                            </h2>
+                            <div class="p-3 border rounded-3 bg-light mb-4"
+                                style="max-height: 280px; overflow-y: auto;">
                                 <p class="text-secondary lh-lg mb-0" style="font-family: 'Lora', serif;">
-                                    Desde tiempos inmemoriales, los sabinos y ahuehuetes milenarios que custodian el cauce del Río Tula han sido testigos de apariciones nocturnas misteriosas. Los lugareños más ancianos relatan que, entre las doce y las tres de la madrugada, una espesa e inusual niebla emerge de las aguas templadas del río.<br><br>
-                                    Es en ese instante cuando el viento arrastra un eco helado que eriza la piel de los pescadores y vecinos de la ribera. Un lamento prolongado y desgarrador que parece buscar algo entre las corrientes de agua.<br><br>
-                                    Dice la leyenda de nuestra comunidad que se trata de un alma en pena que recorre las orillas desde la época colonial, perdiéndose entre los matorrales y las rocas de las barrancas antes de que los primeros rayos del sol toquen el Valle del Mezquital. Los arrieros evitaban cruzar los puentes viejos a esas horas para no toparse con la silueta pálida y flotante que viste de blanco níveo.
+                                    Desde tiempos inmemoriales, los sabinos y ahuehuetes milenarios que custodian el
+                                    cauce del Río Tula han sido testigos de apariciones nocturnas misteriosas. Los
+                                    lugareños más ancianos relatan que, entre las doce y las tres de la madrugada, una
+                                    espesa e inusual niebla emerge de las aguas templadas del río.<br><br>
+                                    Es en ese instante cuando el viento arrastra un eco helado que eriza la piel de los
+                                    pescadores y vecinos de la ribera. Un lamento prolongado y desgarrador que parece
+                                    buscar algo entre las corrientes de agua.<br><br>
+                                    Dice la leyenda de nuestra comunidad que se trata de un alma en pena que recorre las
+                                    orillas desde la época colonial, perdiéndose entre los matorrales y las rocas de las
+                                    barrancas antes de que los primeros rayos del sol toquen el Valle del Mezquital. Los
+                                    arrieros evitaban cruzar los puentes viejos a esas horas para no toparse con la
+                                    silueta pálida y flotante que viste de blanco níveo.
                                 </p>
                             </div>
                         </div>
                         <div class="pt-3 border-top d-flex justify-content-end">
-                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar Relato</button>
                         </div>
                     </div>
                 </div>
@@ -173,26 +216,45 @@
     <div class="modal fade" id="mythModal2" tabindex="-1" aria-labelledby="mythModal2Title" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
             <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
-                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <button type="button"
+                    class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm"
+                    data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 <div class="row g-0 destination-modal-row">
                     <div class="col-lg-6 position-relative destination-modal-gallery">
-                        <img src="./ImagenesLeyendas/CharroNegro.webp" class="d-block w-100 h-100 object-fit-cover" alt="Cerro de Mixquiahuala">
+                        <img src="./ImagenesLeyendas/CharroNegro.webp" class="d-block w-100 h-100 object-fit-cover"
+                            alt="Cerro de Mixquiahuala">
                     </div>
-                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                    <div
+                        class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
                         <div>
-                            <span class="badge bg-dark text-white px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Mito urbano</span>
-                            <h2 class="display-6 fw-bold text-dark mb-3" id="mythModal2Title">El Charro Negro del Cerro</h2>
-                            <div class="p-3 border rounded-3 bg-light mb-4" style="max-height: 280px; overflow-y: auto;">
+                            <span
+                                class="badge bg-dark text-white px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Mito
+                                urbano</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="mythModal2Title">El Charro Negro del Cerro
+                            </h2>
+                            <div class="p-3 border rounded-3 bg-light mb-4"
+                                style="max-height: 280px; overflow-y: auto;">
                                 <p class="text-secondary lh-lg mb-0" style="font-family: 'Lora', serif;">
-                                    El imponente Cerro de Mixquiahuala resguarda secretos que desafían la lógica. Quienes acostumbran ascender por sus veredas áridas al caer la tarde, cuentan la historia de un imponente caballo negro cuyos ojos brillan como brasas encendidas.<br><br>
-                                    Montando a la bestia se encuentra un hombre de postura impecable, vestido con un elegante traje de charro con botonadura de plata que resplandece bajo la luz de la luna.<br><br>
-                                    A diferencia de los mitos comunes, los campesinos de la región afirman que este ser no busca hacer daño inmediato; se aparece ante los caminantes solitarios ofreciendo bolsas llenas de monedas de oro antiguo a cambio de que le acompañen hacia el fondo de las grutas y profundidades de la barranca.<br><br>
-                                    Quienes conocen la advertencia de sus abuelos saben que aceptar cualquier obsequio del Charro Negro sella un pacto del cual es imposible escapar, por lo que el consejo de los locales es simplemente persignarse, desviar la mirada y continuar el paso firmemente sin mirar atrás, oyendo el tintineo metálico de sus espuelas perderse entre las biznagas.
+                                    El imponente Cerro de Mixquiahuala resguarda secretos que desafían la lógica.
+                                    Quienes acostumbran ascender por sus veredas áridas al caer la tarde, cuentan la
+                                    historia de un imponente caballo negro cuyos ojos brillan como brasas
+                                    encendidas.<br><br>
+                                    Montando a la bestia se encuentra un hombre de postura impecable, vestido con un
+                                    elegante traje de charro con botonadura de plata que resplandece bajo la luz de la
+                                    luna.<br><br>
+                                    A diferencia de los mitos comunes, los campesinos de la región afirman que este ser
+                                    no busca hacer daño inmediato; se aparece ante los caminantes solitarios ofreciendo
+                                    bolsas llenas de monedas de oro antiguo a cambio de que le acompañen hacia el fondo
+                                    de las grutas y profundidades de la barranca.<br><br>
+                                    Quienes conocen la advertencia de sus abuelos saben que aceptar cualquier obsequio
+                                    del Charro Negro sella un pacto del cual es imposible escapar, por lo que el consejo
+                                    de los locales es simplemente persignarse, desviar la mirada y continuar el paso
+                                    firmemente sin mirar atrás, oyendo el tintineo metálico de sus espuelas perderse
+                                    entre las biznagas.
                                 </p>
                             </div>
                         </div>
                         <div class="pt-3 border-top d-flex justify-content-end">
-                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar Relato</button>
                         </div>
                     </div>
                 </div>
@@ -204,25 +266,42 @@
     <div class="modal fade" id="mythModal3" tabindex="-1" aria-labelledby="mythModal3Title" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
             <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
-                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <button type="button"
+                    class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm"
+                    data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 <div class="row g-0 destination-modal-row">
                     <div class="col-lg-6 position-relative destination-modal-gallery">
-                        <img src="./ImagenesLeyendas/TunelesOcultos.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Casa Abandonada">
+                        <img src="./ImagenesLeyendas/TunelesOcultos.jpg" class="d-block w-100 h-100 object-fit-cover"
+                            alt="Casa Abandonada">
                     </div>
-                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                    <div
+                        class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
                         <div>
-                            <span class="badge bg-secondary text-white px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Misterio local</span>
+                            <span
+                                class="badge bg-secondary text-white px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Misterio
+                                local</span>
                             <h2 class="display-6 fw-bold text-dark mb-3" id="mythModal3Title">Los Túneles Ocultos</h2>
-                            <div class="p-3 border rounded-3 bg-light mb-4" style="max-height: 280px; overflow-y: auto;">
+                            <div class="p-3 border rounded-3 bg-light mb-4"
+                                style="max-height: 280px; overflow-y: auto;">
                                 <p class="text-secondary lh-lg mb-0" style="font-family: 'Lora', serif;">
-                                    A los bordes del municipio, donde la roca se fractura y la vegetación de la barranca se vuelve más densa, se erige un mito moderno que obsesiona a los exploradores urbanos: la existencia de pasadizos secretos y túneles subterráneos debajo de la famosa e imponente edificación abandonada en obra gris cerca de Tunititlán.<br><br>
-                                    Los rumores locales sugieren que estas grutas no son formaciones naturales cotidianas, sino ramificaciones meticulosamente excavadas que cruzan por debajo del lecho del Río Tula.<br><br>
-                                    La conseja popular afirma que estos túneles sirvieron como rutas de escape y escondite de tesoros ilícitos o reliquias valiosas durante las últimas décadas del siglo pasado. Los pastores de la zona cuentan que por las noches se perciben corrientes de aire frío inusuales provenientes de respiraderos ocultos entre las piedras del monte, acompañados por ruidos mecánicos extraños. El mito permanece vigente debido a lo peligroso y resbaladizo del terreno, manteniendo el misterio intacto lejos del alcance de los curiosos cotidianos.
+                                    A los bordes del municipio, donde la roca se fractura y la vegetación de la barranca
+                                    se vuelve más densa, se erige un mito moderno que obsesiona a los exploradores
+                                    urbanos: la existencia de pasadizos secretos y túneles subterráneos debajo de la
+                                    famosa e imponente edificación abandonada en obra gris cerca de Tunititlán.<br><br>
+                                    Los rumores locales sugieren que estas grutas no son formaciones naturales
+                                    cotidianas, sino ramificaciones meticulosamente excavadas que cruzan por debajo del
+                                    lecho del Río Tula.<br><br>
+                                    La conseja popular afirma que estos túneles sirvieron como rutas de escape y
+                                    escondite de tesoros ilícitos o reliquias valiosas durante las últimas décadas del
+                                    siglo pasado. Los pastores de la zona cuentan que por las noches se perciben
+                                    corrientes de aire frío inusuales provenientes de respiraderos ocultos entre las
+                                    piedras del monte, acompañados por ruidos mecánicos extraños. El mito permanece
+                                    vigente debido a lo peligroso y resbaladizo del terreno, manteniendo el misterio
+                                    intacto lejos del alcance de los curiosos cotidianos.
                                 </p>
                             </div>
                         </div>
                         <div class="pt-3 border-top d-flex justify-content-end">
-                            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar Relato</button>
                         </div>
                     </div>
                 </div>
@@ -231,7 +310,10 @@
     </div>
 
     <!-- JS Bootstrap 5 y script personalizado -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

@@ -23,21 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 2. Lógica del Buscador de Mitos y Leyendas
-    const mythSearch = document.getElementById("mythSearch");
-    if (mythSearch) {
-        const cards = document.querySelectorAll(".myth-card");
-        const noResults = document.getElementById("noResults");
+    // 2. Función genérica para buscadores en tarjetas (Mitos y Personajes)
+    const initCardSearch = (inputId, cardSelector, noResultsId) => {
+        const searchInput = document.getElementById(inputId);
+        if (!searchInput) return;
 
-        mythSearch.addEventListener("input", () => {
-            const query = mythSearch.value.toLowerCase().trim();
+        const cards = document.querySelectorAll(cardSelector);
+        const noResults = document.getElementById(noResultsId);
+
+        searchInput.addEventListener("input", () => {
+            const query = searchInput.value.toLowerCase().trim();
             let hasResults = false;
 
             cards.forEach((card) => {
-                const matches = card.dataset.title.toLowerCase().includes(query);
+                const titleData = card.dataset.title ? card.dataset.title.toLowerCase() : "";
                 
-                // Muestra u oculta las tarjetas según la búsqueda
-                if (matches) {
+                if (titleData.includes(query)) {
                     card.classList.remove("d-none");
                     hasResults = true;
                 } else {
@@ -45,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // Muestra el mensaje si no hay coincidencias
             if (noResults) {
                 if (hasResults) {
                     noResults.classList.add("d-none");
@@ -54,5 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         });
-    }
+    };
+
+    // Inicializar buscador de Mitos y Leyendas
+    initCardSearch("mythSearch", ".myth-card", "noResults");
+
+    // Inicializar buscador de Personajes Emblemáticos
+    initCardSearch("charSearch", ".char-card", "noResults");
 });
