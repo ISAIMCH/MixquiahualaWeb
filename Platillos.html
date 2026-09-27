@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Descubre la gastronomía tradicional, platillos típicos y sabores ancestrales de Mixquiahuala de Juárez, Hidalgo.">
+    <meta name="theme-color" content="#198754">
+    <title>Platillos Típicos | Mixquiahuala de Juárez</title>
+    <!-- CSS Bootstrap 5 y Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="bg-body-tertiary">
+    <a class="visually-hidden-focusable position-absolute top-0 start-0 z-3 p-3 bg-white" href="#contenido">Saltar al
+        contenido</a>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm"
+            aria-label="Navegación principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">Mixquiahuala</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation"
+                    aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir o cerrar el menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html#lugares">Lugares emblemáticos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Tradiciones.html">Tradiciones de la comunidad</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Mitos.html">Mitos y leyendas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Personajes.html">Personajes emblemáticos</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="Gastronomia.html">Platillos Típicos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <!-- SECCIÓN DE ENCABEZADO Y BÚSQUEDA -->
+        <section class="bg-light py-5 border-bottom">
+            <div class="container text-center">
+                <p class="text-success text-uppercase fw-semibold mb-2">Gastronomía y Sabores · Valle del Mezquital</p>
+                <h1 class="display-5 fw-bold text-dark mb-3">Platillos Típicos</h1>
+                <p class="lead text-body-secondary mx-auto mb-4" style="max-width: 700px;">
+                    Sabor, tradición e historia en cada bocado. Explora las recetas y delicias culinarias transmitidas de generación en generación en Mixquiahuala.
+                </p>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="input-group input-group-lg shadow-sm">
+                            <span class="input-group-text bg-white border-end-0 text-success"><i
+                                    class="bi bi-search"></i></span>
+                            <input type="text" id="foodSearch" class="form-control border-start-0 ps-0"
+                                placeholder="Escribe para buscar un platillo o ingrediente...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REJILLA DE PLATILLOS -->
+        <section id="platillos" class="container py-5">
+            <div class="alert alert-warning text-center d-none" id="noResults" role="alert">
+                No se encontraron platillos que coincidan con tu búsqueda.
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
+
+                <!-- TARJETA 1: Barbacoa de Borrego -->
+                <div class="col food-card" data-title="barbacoa borrego horno de tierra penca maguey consomé ancestral">
+                    <article class="card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-4x3">
+                            <img src="ImagenesPlatillos/BarbacoaDeHoyo.jpg" class="card-img-top object-fit-cover"
+                                alt="Barbacoa tradicional de borrego">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-danger align-self-start mb-2">Platillo Principal</span>
+                            <h3 class="h5 card-title">Barbacoa de Borrego</h3>
+                            <p class="card-text text-body-secondary">El pilar gastronómico del Valle del Mezquital. Carne jugosa cocida lentamante bajo tierra en pencas de maguey acompañadas de su tradicional consomé.</p>
+                            <button class="btn btn-success mt-auto align-self-start" type="button"
+                                data-bs-toggle="modal" data-bs-target="#foodModal1">Ver Receta y Detalles →</button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- TARJETA 2: Ximbó -->
+                <div class="col food-card" data-title="ximbo cuerito pollo carne de cerdo penca maguey horno subterráneo">
+                    <article class="card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-4x3">
+                            <img src="ImagenesGastronomia/Ximbo.jpg" class="card-img-top object-fit-cover"
+                                alt="Ximbó tradicional">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-warning align-self-start mb-2">Especialidad Local</span>
+                            <h3 class="h5 card-title">Ximbó Tradicional</h3>
+                            <p class="card-text text-body-secondary">Delicioso envuelto de carne de cerdo y pollo con cueritos de cerdo, sazonado en chiles secos y asado artesanalmente dentro de pencas de maguey.</p>
+                            <button class="btn btn-success mt-auto align-self-start" type="button"
+                                data-bs-toggle="modal" data-bs-target="#foodModal2">Ver Receta y Detalles →</button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- TARJETA 3: Escamoles y Chinicuiles -->
+                <div class="col food-card" data-title="escamoles chinicuiles gusanos de maguey caviar mexicano insectos exótico">
+                    <article class="card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-4x3">
+                            <img src="ImagenesGastronomia/Escamoles.jpg" class="card-img-top object-fit-cover"
+                                alt="Escamoles al ajillo o mantequilla">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-success align-self-start mb-2">Gastronomía Prehispánica</span>
+                            <h3 class="h5 card-title">Escamoles y Chinicuiles</h3>
+                            <p class="card-text text-body-secondary">Conocidos como el "caviar mexicano", las larvas de hormiga colectadas entre las raíces del maguey se guisan tradicionalmente con mantequilla y epazote.</p>
+                            <button class="btn btn-success mt-auto align-self-start" type="button"
+                                data-bs-toggle="modal" data-bs-target="#foodModal3">Ver Receta y Detalles →</button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- TARJETA 4: Pulque Fiel y Curados -->
+                <div class="col food-card" data-title="pulque curados maguey bebida ancestral tlachiquero nektar">
+                    <article class="card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-4x3">
+                            <img src="ImagenesGastronomia/Pulque.jpg" class="card-img-top object-fit-cover"
+                                alt="Pulque tradicional y curados de frutas">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-primary align-self-start mb-2">Bebida Tradicional</span>
+                            <h3 class="h5 card-title">Pulque y Curados</h3>
+                            <p class="card-text text-body-secondary">La bebida de los dioses. Fermentado de aguamiel extraído del maguey pulquero, disfrutado al natural o "curado" con frutas de temporada y semillas.</p>
+                            <button class="btn btn-success mt-auto align-self-start" type="button"
+                                data-bs-toggle="modal" data-bs-target="#foodModal4">Ver Receta y Detalles →</button>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE LLAMADO A LA ACCIÓN -->
+        <section class="bg-success text-white py-5" aria-label="Invitación">
+            <div class="container text-center">
+                <p class="text-uppercase fw-semibold mb-2">Sumérgete en nuestras raíces</p>
+                <h2 class="h3 fw-bold">Tradición, historia y cultura en un solo destino</h2>
+                <a class="btn btn-warning fw-bold mt-2 rounded-pill px-4" href="Personajes.html">Conoce a nuestros personajes icónicos</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-dark text-white-50 py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+            <p class="mb-0">Mixquiahuala de Juárez, Hidalgo</p>
+            <nav aria-label="Navegación de pie de página">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white-50 px-2" href="Tradiciones.html">Tradiciones</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50 px-2" href="Mitos.html">Mitos y leyendas</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50 px-2" href="Personajes.html">Personajes</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50 px-2" href="Gastronomia.html">Gastronomía</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: BARBACOA -->
+    <div class="modal fade" id="foodModal1" tabindex="-1" aria-labelledby="foodModal1Title" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button"
+                    class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm"
+                    data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <img src="ImagenesPlatillos/BarbacoaDeHoyo.jpg" class="d-block w-100 h-100 object-fit-cover"
+                            alt="Barbacoa de borrego">
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-danger text-white px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Platillo Principal</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="foodModal1Title">Barbacoa de Borrego</h2>
+                            <div class="p-3 border rounded-3 bg-light mb-4" style="max-height: 280px; overflow-y: auto;">
+                                <p class="text-secondary mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 0.95em;">
+                                    <strong>📌 Ficha Gastronómica:</strong><br>
+                                    • <strong>Ingrediente Base:</strong> Carne de ovino y pencas de maguey<br>
+                                    • <strong>Técnica de Cocción:</strong> Horno de tierra (subterráneo)<br>
+                                    • <strong>Acompañamientos:</strong> Consomé con garbanzo, salsa borracha y tortillas hechas a mano<br>
+                                    • <strong>Ocasión Tradicional:</strong> Domingos familiares, bodas y fiestas patronales
+                                </p>
+                                <hr>
+                                <p class="text-secondary lh-lg mb-0" style="font-family: 'Lora', serif;">
+                                    La barbacoa es sin duda la manifestación gastronómica por excelencia en Mixquiahuala y en toda la región del Valle del Mezquital. Su preparación conserva la técnica ancestral prehispánica y mestiza del cocido subterráneo.<br><br>
+                                    <strong>🔥 Proceso Artesanal</strong><br>
+                                    La preparación inicia desde la madrugada con la excavación e iluminación del horno excavado en la tierra con leña de encino o mezquite. Se sazona la carne de borrego y se envuelve cuidadosamente dentro de las pencas asadas del maguey pulquero. En el fondo del horno se coloca un recipiente con agua, garbanzos, chiles y especias para recibir los jugos y la grasa que destila la carne durante una cocción lenta de más de 8 horas.<br><br>
+                                    El resultado es una carne suave que se desprende fácilmente del hueso con un ahumado característico impartido por el maguey, servida siempre con su consomé bien caliente y salsa borracha elaborada con chile pasilla y pulque.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-top d-flex justify-content-end">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: XIMBÓ -->
+    <div class="modal fade" id="foodModal2" tabindex="-1" aria-labelledby="foodModal2Title" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered destination-modal-dialog">
+            <div class="modal-content destination-modal-content overflow-hidden border-0 rounded-4 shadow-lg">
+                <button type="button"
+                    class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white p-2 rounded-circle shadow-sm"
+                    data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="row g-0 destination-modal-row">
+                    <div class="col-lg-6 position-relative destination-modal-gallery">
+                        <img src="ImagenesGastronomia/Ximbo.jpg" class="d-block w-100 h-100 object-fit-cover"
+                            alt="Ximbó tradicional">
+                    </div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white destination-modal-info">
+                        <div>
+                            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Especialidad Local</span>
+                            <h2 class="display-6 fw-bold text-dark mb-3" id="foodModal2Title">Ximbó Tradicional</h2>
+                            <div class="p-3 border rounded-3 bg-light mb-4" style="max-height: 280px; overflow-y: auto;">
+                                <p class="text-secondary mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 0.95em;">
+                                    <strong>📌 Ficha Gastronómica:</strong><br>
+                                    • <strong>Ingredientes Principales:</strong> Cerdo, pollo, cueritos de cerdo y nopales<br>
+                                    • <strong>Sazón:</strong> Adobo de chiles guajillo, ancho y hierbas de olor<br>
+                                    • <strong>Origen:</strong> Valle del Mezquital (palabra de origen Otomí)<br>
+                                    • <strong>Servido con:</strong> Limón, tortillas de maíz azul y salsas molcajeteadas
+                                </p>
+                                <hr>
+                                <p class="text-secondary lh-lg mb-0" style="font-family: 'Lora', serif;">
+                                    El Ximbó (palabra otomí que significa "la penca del maguey") es una invención gastronómica única de la región. Aunque comparte la técnica de cocción subterránea de la barbacoa, ofrece una mezcla de sabores completamente distintiva gracias al maridaje de carnes y adobos.<br><br>
+                                    <strong>🌶️ Una Explosión de Sabores</strong><br>
+                                    Para preparar el Ximbó, la carne de pollo y cerdo se marina con una pasta espesa de chiles secos, nopales picados y hierbas del campo. Todo se coloca dentro de un "paquete" confeccionado con pencas de maguey tierno asadas para que sean flexibles.<br><br>
+                                    El paquete se ata fuertemente con hilo o alambre y se lleva al horno de tierra. Los cueritos de cerdo se funden lentamente durante la cocción, impregnando la carne y los nopales con una jugosidad y textura incomparables.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-top d-flex justify-content-end">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTA PARA TU SCRIPT DE BÚSQUEDA -->
+    <!-- Para que el buscador funcione en este HTML nuevo, simplemente agrega esta línea al final de tu script.js: -->
+    <!-- initCardSearch("foodSearch", ".food-card", "noResults"); -->
+
+    <!-- JS Bootstrap 5 y script personalizado -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
