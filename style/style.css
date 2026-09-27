@@ -1595,17 +1595,3 @@ footer::before {
         animation: none;
     }
 }
-/* ─────────────────────────────────────────────────────────
-   CORRECCIÓN DE Z-INDEX PARA MODALES DE BOOTSTRAP
-─────────────────────────────────────────────────────────── */
-.modal-backdrop {
-    z-index: 1040 !important;
-}
-
-.modal {
-    z-index: 1050 !important;
-}
-
-.modal-dialog {
-    z-index: 1060 !important;
-}
