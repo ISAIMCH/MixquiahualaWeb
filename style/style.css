@@ -1139,14 +1139,134 @@ footer::before {
     object-fit: cover;
 }
 
+.search-section {
+    background: linear-gradient(180deg, #f0f0f0 0%, #f8f8f8 100%);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #1a472a;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    box-shadow: 0 5px 25px rgba(26, 71, 42, 0.2);
+    border-color: #ffd700;
+}
+
+.modal-myth-content {
+    background-color: white;
+    margin: 50px auto;
+    padding: 0;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1.2fr 1.8fr;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+    animation: slideInModal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+}
+
+.modal-myth-image {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    position: relative;
+}
+
+.modal-myth-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-myth-body {
+    padding: 45px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-myth-text-container {
+    overflow-y: auto;
+    max-height: 320px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-myth-text-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-myth-text-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-myth-text-container::-webkit-scrollbar-thumb {
+    background: #1a472a;
+    border-radius: 10px;
+}
+
+.myth-text {
+    font-family: 'Lora', serif;
+    color: #444;
+    line-height: 1.9;
+    font-size: 1.05em;
+    white-space: pre-line;
+}
+
+.no-results {
+    display: none;
+    text-align: center;
+    font-size: 1.3em;
+    color: #666;
+    margin: 40px 0;
+    font-weight: 600;
+}
+
 .place-card-img--myth {
     width: 100%;
     height: 250px;
     object-fit: cover;
+    object-position: center 30%;
 }
 
 .modal-icon--light {
     color: #fff;
+}
+
+@media (max-width: 768px) {
+    .modal-myth-content {
+        grid-template-columns: 1fr;
+        margin: 20px auto;
+    }
+
+    .modal-myth-image {
+        min-height: 250px;
+        height: 250px;
+    }
+
+    .modal-myth-text-container {
+        max-height: none;
+        overflow-y: visible;
+    }
 }
 
 .char-bio__fact-sheet,
